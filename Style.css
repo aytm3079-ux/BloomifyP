@@ -1,0 +1,1267 @@
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;500;700&family=Amiri:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+* { /* تنسيق عام يطبق على كل عناصر الصفحة */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة المسافات الداخلية الافتراضية */
+    box-sizing: border-box; /* حساب العرض والارتفاع شامل الحواف والحشو */
+    font-family: 'Roboto', sans-serif; /* تحديد نوع الخط المستخدم */
+    outline: none; /* إزالة الإطار عند التحديد */
+    border: none; /* إزالة الحدود الافتراضية */
+    text-decoration: none; /* إزالة الخطوط من الروابط */
+    text-transform: capitalize; /* جعل أول حرف من كل كلمة كبير */
+    transition: 1s linear; /* إضافة تأثير انتقال ناعم */
+}
+
+html { /* تنسيق عنصر html الأساسي */
+    font-size: 62.5%; /* تصغير الخط لتسهيل استخدام rem (1rem = 10px) */
+    scroll-behavior: smooth; /* تمرير ناعم عند التنقل */
+    scroll-padding-top: 90px; /* مسافة أعلى الصفحة مع التمرير (مناسبة للهيدر الثابت) */
+    overflow-x: hidden; /* منع التمرير الأفقي */
+}
+/*  بداية شريط الإعلانات أعلى الصفحة */
+.announcement-bar { 
+    position: fixed; /* تثبيت الشريط في مكانه */
+    top: 0; /* وضع الشريط في أعلى الصفحة */
+    left: 0; /* محاذاة الشريط لليسار */
+    width: 100%; /* عرض الشريط بكامل الصفحة */
+
+    text-align: center; /* توسيط النص داخل الشريط */
+    padding: 8px 0; /* مسافة داخلية من الأعلى والأسفل */
+    font-size: 14px; /* حجم خط النص */
+    z-index: 1100; /* إظهار الشريط فوق باقي العناصر */
+}
+
+.announcement-bar a { /* تنسيق الروابط داخل شريط الإعلانات */
+    text-decoration: underline; /* وضع خط أسفل الرابط */
+    font-weight: bold; /* جعل الخط عريض */
+    color: #F72585; /* لون الرابط */
+}
+
+/*  نهاية شريط الإعلانات أعلى الصفحة */
+
+
+/*  بداية تنسيق الهيدر الرئيسي */
+.main-header { 
+    background-color: #fff; /* لون خلفية الهيدر */
+    border-bottom: 1px solid #eee; /* خط سفلي خفيف */
+    padding: 10px 0; /* مسافة داخلية من الأعلى والأسفل */
+
+    position: fixed; /* تثبيت الهيدر في أعلى الصفحة */
+    top: 0; /* وضع الهيدر في الأعلى */
+    left: 0; /* محاذاة الهيدر لليسار */
+    width: 100%; /* جعل الهيدر بعرض الصفحة */
+    z-index: 1000; /* إظهار الهيدر فوق باقي العناصر */
+}
+
+.header-container { /* الحاوية الداخلية للهيدر */
+    max-width: 1200px; /* أقصى عرض للهيدر */
+    margin: 0 auto; /* توسيط الحاوية */
+    padding: 0 20px; /* مسافة جانبية داخلية */
+    display: flex; /* استخدام Flexbox */
+    justify-content: space-between; /* توزيع العناصر أفقياً */
+    align-items: center; /* محاذاة العناصر عمودياً */
+}
+
+.main-nav ul { /* قائمة التنقل */
+    display: flex; /* عرض العناصر بجانب بعض */
+    gap: 30px; /* مسافة بين عناصر القائمة */
+    font-size: 16px; /* حجم الخط */
+    font-weight: 500; /* سمك الخط */
+    list-style: none; /* إزالة النقاط */
+    margin-top: 28px; /* مسافة من الأعلى */
+}
+
+.main-nav a { /* روابط القائمة */
+    position: relative; /* للتحكم في العناصر الداخلية */
+    padding: 10px 0; /* مسافة داخلية عمودية */
+    color: #333; /* لون النص */
+    transition: color 0.3s; /* تأثير ناعم عند التغيير */
+    font-size: 18px; /* حجم خط الرابط */
+}
+
+.main-nav a:hover,
+.main-nav .active { /* عند المرور أو الرابط النشط */
+    color: #ff3366; /* لون التفاعل */
+}
+
+.arrow { /* السهم بجانب العناصر */
+    font-size: 10px; /* حجم السهم */
+    margin-right: 5px; /* مسافة بين السهم والنص */
+}
+
+/* Header Icons (Right side) */
+.header-icons { /* أيقونات الهيدر */
+    display: flex; /* عرض الأيقونات بجانب بعض */
+    align-items: center; /* محاذاة عمودية */
+    gap: 20px; /* مسافة بين الأيقونات */
+    font-size: 20px; /* حجم الأيقونات */
+    margin-top: 40px; /* مسافة من الأعلى */
+}
+
+.cart-icon { /* أيقونة سلة التسوق */
+    position: relative; /* لتموضع العداد */
+    cursor: pointer; /* تغيير شكل المؤشر */
+}
+
+.cart-count { /* عداد المنتجات في السلة */
+    position: absolute; /* تموضع فوق الأيقونة */
+    top: -10px; /* رفع العداد للأعلى */
+    right: -10px; /* إزاحة لليمين */
+    background-color: #ff3366; /* لون الخلفية */
+    color: white; /* لون النص */
+    border-radius: 50%; /* جعل العداد دائري */
+    padding: 2px 6px; /* مسافة داخلية */
+    font-size: 12px; /* حجم الخط */
+    font-weight: 700; /* سمك الخط */
+    line-height: 1; /* ارتفاع السطر */
+}
+
+.menu-toggle { /* زر فتح القائمة */
+    cursor: pointer; /* مؤشر يد */
+}
+
+/* إخفاء الأيقونات النصية في الكود الحقيقي */
+.icon-cart,
+.icon-search,
+.icon-menu { /* أيقونات وهمية */
+    font-style: normal; /* إزالة نمط الخط */
+}
+/*  نهاية تنسيق الهيدر الرئيسي */
+/*بداية  الدف الزجاجي */
+.glass-container { 
+    width: 1300px; /* عرض الحاوية */
+    height: 550px; /* ارتفاع الحاوية */
+
+    background-size: cover; /* تغطية الخلفية كاملة */
+    background-position: center; /* توسيط الخلفية */
+
+    backdrop-filter: blur(15px); /* تأثير الزجاج (تغبيش) */
+    -webkit-backdrop-filter: blur(15px); /* دعم متصفحات WebKit */
+
+    border: 1px solid rgba(255, 255, 255, 0.4); /* إطار شفاف */
+    border-radius: 40px; /* حواف دائرية */
+    display: flex; /* استخدام Flexbox */
+    align-items: center; /* محاذاة عمودية */
+    justify-content: space-between; /* توزيع العناصر */
+    padding: 50px; /* مسافة داخلية */
+    gap: 30px; /* مسافة بين العناصر */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1); /* ظل ناعم */
+    margin-top: 100px; /* إزاحة من الأعلى */
+    overflow: hidden; /* منع خروج المحتوى عن الحواف */
+}
+
+.hero-section { /* قسم الواجهة الرئيسية */
+    width: 100%; /* عرض كامل الصفحة */
+    min-height: 100vh; /* ارتفاع كامل الشاشة */
+    display: flex; /* Flexbox */
+    align-items: center; /* توسيط عمودي */
+    justify-content: center; /* توسيط أفقي */
+    background: url('image/h.jpg') no-repeat; /* صورة الخلفية */
+    background-size: cover; /* تغطية الخلفية */
+    background-position: center; /* توسيط الخلفية */
+    padding: 20px; /* مسافة داخلية */
+    font-family: 'Tajawal', sans-serif; /* الخط الأساسي */
+}
+
+.hero-content { /* محتوى النص */
+    flex: 1; /* يأخذ مساحة مرنة */
+    text-align: right; /* محاذاة النص لليمين */
+    padding: 20px; /* مسافة داخلية */
+    direction: rtl; /* اتجاه الكتابة عربي */
+    position: relative; /* تموضع نسبي */
+    right: 80px; /* إزاحة لليمين */
+}
+
+.hero-content h1 { /* عنوان الواجهة */
+    font-family: "Tajawal", sans-serif; /* خط العنوان */
+    font-size: 4rem; /* حجم العنوان */
+    font-weight: 700; /* سمك الخط */
+    margin-bottom: 20px; /* مسافة أسفل العنوان */
+    line-height: 1.1; /* ارتفاع السطر */
+    color: #F72585; /* اللون العنابي */
+    text-shadow: 3px 3px 10px rgba(128, 27, 61, 0.1); /* ظل خفيف */
+}
+
+.hero-content p { /* نص الوصف */
+    font-family: "Tajawal", sans-serif; /* خط مريح للقراءة */
+    font-size: 2.2rem; /* حجم النص */
+    font-weight: 300; /* خط خفيف */
+    margin-bottom: 45px; /* مسافة أسفل النص */
+    line-height: 1.8; /* تباعد الأسطر */
+    color: black; /* لون النص */
+    max-width: 600px; /* أقصى عرض للنص */
+    margin-left: auto; /* محاذاة لليمين */
+    letter-spacing: 0.5px; /* تباعد بين الحروف */
+}
+
+.hero-content h1 span { /* كلمات مميزة داخل العنوان */
+    color: #fb6f92; /* لون وردي ناعم */
+    font-style: italic; /* خط مائل */
+}
+
+.shop-btn { /* زر التسوق */
+    font-family: 'Alexandria', sans-serif; /* خط الزر */
+    display: inline-block; /* عرض كعنصر inline */
+    padding: 16px 50px; /* مسافة داخلية */
+    background: #F72585; /* لون الزر */
+    color: #fff; /* لون النص */
+    text-decoration: none; /* إزالة الخط */
+    font-weight: 600; /* سمك الخط */
+    font-size: 1.2rem; /* حجم الخط */
+    border-radius: 50px; /* حواف دائرية */
+    position: relative; /* لتأثير اللمعان */
+    overflow: hidden; /* إخفاء اللمعان الزائد */
+    z-index: 1; /* ترتيب الطبقات */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* انتقال ناعم */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* إطار شفاف */
+    box-shadow: 0 8px 20px rgba(128, 27, 61, 0.2); /* ظل */
+    cursor: pointer; /* شكل المؤشر */
+    width: 400px; /* عرض الزر */
+    text-align: center; /* توسيط النص */
+}
+
+/* تأثير اللمعان */
+.shop-btn::before { /* طبقة اللمعان */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.6s;
+    z-index: -1;
+}
+
+.shop-btn:hover { /* عند تمرير الماوس */
+    background: #fb6f92; /* تغيير اللون */
+    transform: translateY(-8px) scale(1.05); /* حركة خفيفة */
+    box-shadow: 0 15px 35px rgba(251, 111, 146, 0.4); /* ظل أقوى */
+    letter-spacing: 1px; /* تباعد الحروف */
+}
+
+.shop-btn:hover::before { /* تشغيل اللمعان */
+    left: 100%;
+}
+
+.shop-btn:active { /* عند الضغط */
+    transform: translateY(-2px) scale(0.98); /* تأثير الضغطة */
+}
+
+.hero-image img { /* صورة الواجهة */
+    width: 150%; /* تكبير الصورة */
+    max-width: 400px; /* أقصى عرض */
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3)); /* ظل للصورة */
+    position: relative; /* تموضع نسبي */
+    right: 100px; /* إزاحة لليمين */
+}
+
+/* نهاية الدف الزجاجي */
+/* جزئية الريسبونسف للهيدر والدف الزجاجي*/
+@media (max-width: 768px) {
+    /* 1. تثبيت الهيدر وضمان ظهوره */
+    .main-header {
+        height: auto; /* السماح للهيدر بالتمدد حسب المحتوى */
+        padding: 10px 0;
+    }
+
+    .header-container {
+        flex-direction: column; /* ترتيب العناصر عمودياً: لوجو -> روابط -> أيقونات */
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* 2. الروابط: أهم جزء */
+    .main-nav {
+        width: 100%;
+        display: block !important; /* نضمن أنها غير مخفية */
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-wrap: wrap; /* السماح للروابط بالنزول لسطر جديد لو ضاق المكان */
+        justify-content: center; /* توسيط الروابط */
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .main-nav li {
+        list-style: none;
+    }
+
+    .main-nav a {
+        font-size: 14px; /* حجم مناسب للموبايل */
+        padding: 5px 10px;
+        display: inline-block;
+        color: #333;
+    }
+
+    /* 3. الأيقونات */
+    .header-icons {
+        margin-top: 0;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* 4. تعديل قسم القلاص (الزجاج) لكي لا يغطي الهيدر */
+    .hero-section {
+        padding-top: 220px; /* دفع القسم بالكامل للأسفل لترك مساحة للهيدر */
+    }
+
+    .glass-container {
+        flex-direction: column-reverse; /* الورد فوق والنص تحت */
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        margin-top: 0; /* تم الاعتماد على padding الهيرو */
+        gap: 15px;
+    }
+
+    .hero-content {
+        right: 0 !important; /* إلغاء أي إزاحة يدوية */
+        text-align: center;
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 70%;
+        max-width: 200px;
+        right: 0 !important; /* إلغاء أي إزاحة يدوية */
+        margin: 0 auto;
+    }
+
+    .shop-btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+/*  نهاية جزئية الريسبونسف للهيدر والدف الزجاجي*/
+/* بداية الكلام والعنوان*/
+
+.heading { /* عنوان القسم */
+    text-align: center; /* توسيط النص */
+    font-size: 4rem; /* حجم الخط */
+    color: #333; /* لون النص */
+    padding: 1rem; /* مسافة داخلية */
+    margin: 2rem 0; /* مسافة خارجية */
+    background-color: rgba(255, 51, 184, 0.05); /* خلفية شفافة خفيفة */
+     font-family: 'Alexandria', sans-serif;
+}
+
+.heading span { /* الكلمات المميزة داخل العنوان */
+    color: #F72585; /* لون وردي */
+}
+
+.about .row { /* صف المحتوى */
+    display: flex; /* Flexbox */
+    align-items: center; /* محاذاة عمودية */
+    gap: 2rem; /* مسافة بين العناصر */
+    flex-wrap: wrap; /* التفاف العناصر عند ضيق الشاشة */
+    padding: 2rem 0; /* مسافة داخلية عمودية */
+    padding-bottom: 3rem; /* مسافة إضافية للأسفل */
+    position: relative; /* تموضع نسبي */
+    right: 10px; /* إزاحة بسيطة لليمين */
+}
+
+.content { /* محتوى النصوص */
+    direction: rtl; /* اتجاه الكتابة عربي */
+    padding: 50px; /* مسافة داخلية */
+}
+
+.about .row .video_container { /* حاوية الفيديو */
+    flex: 1 1 40rem; /* قابلية التمدد والانكماش */
+    position: relative; /* تموضع نسبي */
+    left: 20px; /* إزاحة بسيطة لليسار */
+}
+
+.about .row .video_container video { /* الفيديو */
+    width: 100%; /* عرض كامل الحاوية */
+    height: 450px; /* ارتفاع ثابت */
+    border: 1.5rem solid #ffe5ec; /* إطار وردي */
+    border-radius: 0.5rem; /* حواف مستديرة */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    object-fit: cover; /* ملء الحاوية بدون تشويه */
+}
+
+.about .row .video_container h3 { /* عنوان الفيديو */
+    position: absolute; /* تموضع فوق الفيديو */
+    top: 50%; /* منتصف الحاوية عمودي */
+    transform: translateY(-50%); /* محاذاة مركزية */
+    font-size: 2rem; /* حجم الخط */
+    background-color: #ffe5ec; /* خلفية وردية */
+    width: 100%; /* عرض كامل الحاوية */
+    padding: 1rem 2rem; /* مسافة داخلية */
+    text-align: center; /* توسيط النص */
+    mix-blend-mode: screen; /* دمج الألوان بطريقة ناعمة */
+}
+
+.about .row .content { /* نصوص المحتوى */
+    flex: 1 1 40rem; /* قابلية التمدد والانكماش */
+}
+
+.about .row .content h3 { /* عنوان المحتوى */
+    font-family: 'Alexandria', sans-serif; /* خط فاخر */
+    font-size: 3rem; /* حجم العنوان */
+    color: #F72585; /* اللون العنابي */
+    text-shadow: 
+        3px 3px 0px rgba(198, 126, 144, 0.2), /* ظل وردي خفيف */
+        6px 6px 15px rgba(0, 0, 0, 0.1); /* ظل رمادي للعمق */
+    letter-spacing: 1px; /* تباعد الحروف */
+    text-align: center; /* توسيط العنوان */
+    margin-bottom: 20px; /* مسافة أسفل العنوان */
+}
+
+.about .row .content h3::before { /* تأثير خلفي للعنوان */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* توسيط كامل */
+    width: 120%; /* أكبر من النص */
+    height: 120%;
+    background: radial-gradient(circle, rgba(251, 111, 146, 0.15) 0%, transparent 70%); /* هالة وردية */
+    z-index: -1; /* خلف النص */
+    filter: blur(10px); /* تغبيش */
+}
+
+.about .row .content p { /* نص الوصف */
+    font-size: 2.2rem; /* حجم الخط */
+    color: #999; /* لون رمادي */
+    padding: 0.5rem 0; /* مسافة داخلية */
+    padding-top: 1rem; /* مسافة إضافية من الأعلى */
+    line-height: 1.5; /* ارتفاع السطر */
+    font-family: "Tajawal", sans-serif; /* خط مريح للقراءة */
+}
+
+/* ================= استجابة الشاشة ================= */
+@media (max-width: 450px) {
+    .heading { /* تصغير حجم العنوان على الشاشات الصغيرة */
+        font-size: 3rem;
+    }
+}
+
+/* نهاية الكلام والعنوان*/
+/* ================= بداية تنسيق البوتون ================= */
+
+.btn { /* الزر الرئيسي */
+    font-family: 'Alexandria', sans-serif; /* خط الزر */
+    display: inline-block; /* عرض كعنصر inline-block */
+    padding: 14px 40px; /* مسافة داخلية */
+    background: #F72585; /* اللون العنابي الفخم */
+    color: #fff; /* لون النص */
+    text-decoration: none; /* إزالة أي خط تحت النص */
+    font-weight: 500; /* سمك الخط */
+    font-size: 1.1rem; /* حجم الخط */
+    border-radius: 8px; /* حواف ناعمة */
+    position: relative; /* ضروري لتأثير اللمعان */
+    overflow: hidden; /* لإخفاء اللمعان خارج الزر */
+    z-index: 1; /* ترتيب الطبقات */
+    transition: all 0.4s ease-in-out; /* تأثير ناعم عند التغيير */
+    box-shadow: 0 8px 20px rgba(128, 27, 61, 0.2); /* ظل عميق للزر */
+    border: none; /* إزالة أي حدود افتراضية */
+    margin-top: 20px; /* مسافة فوق الزر */
+}
+
+.btn::before { /* طبقة اللمعان */
+    content: '';
+    position: absolute; /* تموضع مطلق */
+    top: 0;
+    left: -100%; /* البداية خارج الزر */
+    width: 100%; /* تغطي كامل الزر */
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent); /* تأثير لمعان */
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* حركة سلسة وبطيئة للمعان */
+    z-index: -1; /* خلف الزر */
+}
+
+.btn:hover { /* عند تمرير الماوس */
+    background: #fb6f92; /* تغيير اللون للوردي */
+    color: #fff; /* لون النص */
+    transform: translateY(-5px); /* ارتفاع خفيف */
+    box-shadow: 0 12px 25px rgba(251, 111, 146, 0.3); /* ظل أكبر عند التفاعل */
+    letter-spacing: 0.5px; /* تباعد خفيف بين الحروف */
+}
+
+.btn:hover::before { /* تشغيل حركة اللمعان */
+    left: 100%; /* حركة المعان عبر الزر */
+}
+
+/* ================= نهاية تنسيق البوتون ================= */
+/* ================= الزر العائم ================= */
+.feedback-button { /* زر الفيدباك العائم */
+    position: fixed; /* يثبت الزر في مكانه */
+    left: 20px; /* مسافة من اليسار */
+    bottom: 40px; /* مسافة من الأسفل */
+    background-color: #ff8fab; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    width: 60px; /* عرض الزر */
+    height: 60px; /* ارتفاع الزر */
+    border-radius: 50%; /* دائرة كاملة */
+    display: flex; /* استخدام Flex لتوسيط الأيقونة */
+    justify-content: center; /* توسيط أفقي */
+    align-items: center; /* توسيط عمودي */
+    font-size: 2rem; /* حجم الأيقونة */
+    z-index: 1000; /* ظهور فوق باقي العناصر */
+    cursor: pointer; /* شكل المؤشر عند المرور */
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2); /* ظل خفيف */
+}
+
+/* ================= نافذة الملاحظات ================= */
+.feedback-widget { /* حاوية نموذج الفيدباك */
+    position: fixed; /* يثبت مكانها */
+    left: 20px; /* مسافة من اليسار */
+    bottom: 110px; /* فوق الزر العائم */
+    width: 300px; /* عرض الحاوية */
+    background-color: #fff; /* لون الخلفية */
+    border-radius: 10px; /* حواف مستديرة */
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2); /* ظل للحاوية */
+    display: none; /* مخفية افتراضياً */
+    flex-direction: column; /* ترتيب العناصر عمودي */
+    z-index: 1000; /* فوق باقي العناصر */
+    overflow: hidden; /* منع خروج المحتوى */
+}
+
+/* ================= إظهار النموذج عند تحديد checkbox ================= */
+#feedback-toggle:checked ~ .feedback-widget { 
+    display: flex; /* إظهار الحاوية */
+}
+
+/* ================= رأس النموذج ================= */
+.feedback-header { /* رأس نموذج الفيدباك */
+    background-color: #ff8fab; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    padding: 0.8rem 1rem; /* مسافة داخلية */
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* توزيع العناصر أفقياً */
+    align-items: center; /* محاذاة عمودية */
+}
+
+.feedback-close { /* أيقونة الإغلاق */
+    cursor: pointer; /* شكل المؤشر */
+}
+
+/* ================= جسم النموذج ================= */
+.feedback-body { /* محتوى النموذج */
+    padding: 1rem; /* مسافة داخلية */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* ترتيب عمودي */
+}
+
+.feedback-body textarea { /* صندوق النص */
+    width: 100%; /* عرض كامل الحاوية */
+    height: 100px; /* ارتفاع ثابت */
+    padding: 0.5rem; /* مسافة داخلية */
+    margin-bottom: 0.5rem; /* مسافة أسفل الصندوق */
+    border-radius: 5px; /* حواف مستديرة */
+    border: 1px solid #ccc; /* إطار رمادي */
+    resize: none; /* منع تغيير الحجم */
+}
+
+.feedback-body button { /* زر الإرسال */
+    padding: 0.5rem; /* مسافة داخلية */
+    background-color: #ff8fab; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* حواف مستديرة */
+    cursor: pointer; /* شكل المؤشر */
+}
+
+.feedback-body button:hover { /* عند المرور على زر الإرسال */
+    background-color: #fb6f92; /* تغيير اللون للوردي */
+}
+
+.feedback-button:hover { /* عند المرور على الزر العائم */
+    transform: scale(1.2) rotate(-5deg); /* تكبير وتدوير خفيف */
+    box-shadow: 0 0.8rem 1.5rem rgba(0,0,0,0.3); /* ظل أقوى */
+}
+
+/* ================= نهاية تنسيق الفيدباك ================= */
+
+/* icons section start */
+.icons_container {
+    background: radial-gradient(circle at top, #fff, #f3f4f8);
+    padding: 7rem 10%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* يطيحوا تحت بعض في الموبايل */
+}
+
+.icons_container .icons {
+    position: relative;
+    padding: 40px 30px 35px;
+    width: 350px; /* زادنا العرض من 280px → 350px */
+    background: #ffffff;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease;
+}
+
+.icons_container .icons:hover {
+    transform: translateY(-18px);
+}
+
+.icons_container .icons i {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff9a9e, #F72585);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons_container .icons h3 {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    color: #222;
+}
+
+.icons_container .icons span {
+    color: #777;
+    font-size: 1.4rem;
+}
+
+/* responsive للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .icons_container .icons {
+        width: 90%; /* ياخذ تقريبًا كل عرض الشاشة */
+        margin: 0 auto;
+    }
+}
+
+
+/* icons section ends */
+.pink-promo-banner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 50px 20px;
+    /* تدرج لوني بين درجات البنك الفاخرة */
+    background: linear-gradient(-45deg, #ff8fab, #F72585, #ffb3c6, #ff8fab);
+    background-size: 400% 400%;
+    animation: pinkGradient 8s ease infinite; /* حركة ألوان ناعمة */
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    direction: rtl;
+    box-shadow: 0 15px 40px rgba(251, 111, 146, 0.2);
+}
+
+/* أنميشن هادئ لتغيير درجات البنك */
+@keyframes pinkGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* الشريط المتحرك (Ticker) */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2); /* خلفية بيضاء شفافة جداً */
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    margin-bottom: 25px;
+}
+
+.ticker {
+    display: flex;
+    white-space: nowrap;
+    animation: tickerMove 25s linear infinite;
+}
+
+.ticker-item {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0 40px;
+}
+
+@keyframes tickerMove {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* النصوص الرئيسية */
+.banner-inner h2 {
+    font-size: 3.2rem;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.banner-inner h2 span {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 5px;
+}
+
+.banner-inner p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* إضافة لمعة خفيفة تتحرك (أنيقة جداً) */
+.pink-promo-banner::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotateShine 15s linear infinite;
+}
+
+@keyframes rotateShine {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+/* product section start */
+/* تنسيق عام للحاوية الكبيرة */
+.luxury-gallery {
+    padding: 60px 0;
+    background: #fff;
+    direction: rtl;
+}
+
+/* التعديل: تصغير الارتفاع وتوسيع العرض */
+.store-gateway {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px; /* تصغير الارتفاع باش ما ياخدش الشاشة كلها */
+    max-width: 1200px; /* جعل الديف في منتصف الصفحة وبحجم محدد */
+    margin: 0 auto 40px auto; /* توسيط الديف وترك مسافة بين الأقسام */
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px; /* حواف ناعمة للديف */
+}
+
+.store-gateway.invert {
+    flex-direction: row-reverse;
+}
+
+.gateway-content {
+    flex: 1.2; /* إعطاء مساحة أكبر للكلام */
+    z-index: 2;
+    padding: 0 30px;
+}
+
+/* الرقم الخلفي */
+.gateway-content span {
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.03);
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    z-index: -1;
+}
+
+/* التعديل: تكبير حجم خط العنوان */
+.gateway-content h2 {
+    font-size: 3.5rem; 
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+/* التعديل: تكبير حجم خط الكلام */
+.gateway-content p {
+    font-size: 1.7rem; 
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+     font-family: 'Alexandria', sans-serif;
+}
+
+/* التعديل: تكبير الصورة */
+.gateway-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.gateway-image img {
+    width: 580px; /* تكبير عرض الصورة */
+    height: 480px; /* تكبير الارتفاع */
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* شكل Blob عصري */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    transition: 0.6s ease-in-out;
+}
+
+.store-gateway:hover .gateway-image img {
+    border-radius: 40px;
+    transform: scale(1.05);
+}
+
+/* ألوان الخلفية لكل قسم (الروح) */
+.flowers { background-color: #fff9fa; }
+.sweets { background-color: #f6fbff; }
+.gifts { background-color: #f9f6ff; }
+
+/* زر الدخول */
+.explore-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: #F72585;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(251, 111, 146, 0.2);
+}
+
+.explore-btn:hover {
+    background: #333;
+    transform: translateY(-5px);
+}
+
+/* الموبايل */
+@media (max-width: 991px) {
+    .store-gateway, .store-gateway.invert {
+        flex-direction: column-reverse;
+        padding: 30px;
+        margin: 20px;
+    }
+    .gateway-image img {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+/* ====================================
+   10. آراء الزبائن - 
+   ==================================== */
+
+/* 1. تنسيق القسم العام */
+.review-carousel-section {
+    padding: 60px 0; /* مساحة داخلية من الأعلى والأسفل */
+    background-color: #fcf8fb; /* لون خلفية القسم */
+    text-align: center; /* محاذاة النص للوسط */
+}
+
+/* عنوان القسم */
+.carousel-section-title {
+    font-size: 30px; /* حجم الخط للعنوان */
+    font-weight: 700; /* سمك الخط */
+    color: #2c0214; /* لون العنوان */
+}
+
+/* العنوان الفرعي */
+.carousel-section-subtitle {
+    font-size: 16px; /* حجم الخط الفرعي */
+    color: #F72585; /* لون الخط */
+    margin-bottom: 40px; /* مسافة تحت العنوان الفرعي */
+}
+
+/* 2. حاوية الشريط الدوار */
+.review-carousel-wrapper {
+    position: relative; /* لتحديد موقع الأزرار بالنسبة للكاروسيل */
+    max-width: 1000px; /* أقصى عرض للحاوية */
+    margin: 0 auto; /* تمركز الحاوية في الصفحة */
+}
+
+/* 3. حاوية البطاقات */
+.review-cards-container {
+    display: flex; /* ترتيب البطاقات أفقيًا */
+    overflow-x: auto; /* السماح بالتمرير الأفقي */
+    padding: 10px 0 20px; /* مسافات داخلية أعلى وأسفل */
+    scrollbar-width: none; /* إخفاء شريط التمرير في بعض المتصفحات */
+}
+
+/* إخفاء شريط التمرير في Webkit */
+.review-cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 4. بطاقة الرأي الواحدة */
+.review-card {
+    flex: 0 0 32%; /* عرض البطاقة بالنسبة للحاوية */
+    margin-left: 15px; /* مسافة بين البطاقات */
+    background: #fff; /* خلفية البطاقة */
+    padding: 25px; /* مساحة داخلية للبطاقة */
+    border-radius: 10px; /* تدوير زوايا البطاقة */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* ظل خفيف للبطاقة */
+    text-align: right; /* محاذاة النص لليمين */
+    display: flex; /* تفعيل Flexbox داخل البطاقة */
+    flex-direction: column; /* ترتيب العناصر رأسيًا */
+    min-width: 300px; /* الحد الأدنى لعرض البطاقة */
+    transition: transform 0.3s ease; /* حركة سلسة عند التمرير */
+}
+
+/* تأثير تمرير الماوس على البطاقة */
+.review-card:hover {
+    transform: translateY(-8px); /* رفع البطاقة قليلًا */
+    box-shadow: 0 0 60px rgba(187,61,177,0.12); /* ظل أكبر لجعل البطاقة بارزة */
+}
+
+/* 5. رأس البطاقة */
+.review-header {
+    display: flex; /* ترتيب النجوم وعلامة الاقتباس أفقياً */
+    justify-content: space-between; /* توزيع المسافة بينهما */
+    margin-bottom: 15px; /* مسافة تحت الرأس */
+}
+
+/* النجوم */
+.rating-stars i {
+    color: #FFC300; /* لون النجوم */
+}
+
+/* علامة الاقتباس */
+.quote-mark {
+    font-size: 30px; /* حجم علامة الاقتباس */
+    color: #dca3bd; /* اللون */
+    opacity: 0.8; /* شفافية */
+}
+
+/* 6. نص الاقتباس */
+.review-text {
+    font-size: 16px; /* حجم الخط */
+    line-height: 1.6; /* تباعد الأسطر */
+    color: #555; /* لون النص */
+    margin-bottom: 20px; /* مسافة تحت النص */
+    font-style: italic; /* إمالة النص */
+}
+
+/* 7. معلومات العميل */
+.client-bio {
+    display: flex; /* ترتيب الصورة والنص أفقيًا */
+    align-items: center; /* محاذاة رأسية */
+    gap: 10px; /* مسافة بين الصورة والنص */
+    direction: rtl; /* وضع الصورة على اليمين */
+}
+
+/* صورة العميل */
+.client-avatar {
+    width: 50px; /* عرض الصورة */
+    height: 50px; /* ارتفاع الصورة */
+    border-radius: 50%; /* جعل الصورة دائرية */
+    object-fit: cover; /* ملائمة الصورة داخل الدائرة */
+    border: 3px solid #F72585; /* إطار حول الصورة */
+}
+
+/* تفاصيل العميل */
+.client-details {
+    display: flex; /* تفعيل Flexbox */
+    flex-direction: column; /* ترتيب الاسم والوصف عموديًا */
+}
+
+/* اسم العميل */
+.client-name {
+    font-weight: 700; /* سمك الخط */
+    color: #2c0214; /* لون الاسم */
+    font-size: 15px; /* حجم الخط */
+}
+
+/* وصف العميل أو عنوانه */
+.client-title {
+    font-size: 0.8em; /* حجم أصغر */
+    color: #888; /* لون النص */
+}
+
+/* 8. أزرار التنقل */
+.nav-button {
+    position: absolute; /* موضع مطلق بالنسبة للكاروسيل */
+    top: 50%; /* في منتصف الارتفاع */
+    transform: translateY(-50%); /* تعديل المحاذاة لتكون بالضبط في الوسط */
+    background: #F72585; /* لون الخلفية */
+    color: #fff; /* لون الأيقونة */
+    border: none; /* إزالة الحدود */
+    width: 35px; /* عرض الزر */
+    height: 35px; /* ارتفاع الزر */
+    border-radius: 50%; /* شكل دائري */
+    cursor: pointer; /* تغيير شكل المؤشر */
+}
+
+/* زر السابق */
+.prev-btn {
+    right: 5px; /* قرب من حافة اليمين */
+}
+
+/* زر التالي */
+.next-btn {
+    left: 5px; /* قرب من حافة اليسار */
+}
+
+/* 9. الاستجابة للشاشات الصغيرة */
+@media (max-width: 1024px) {
+    .review-card {
+        flex: 0 0 45%; /* عرض بطاقتين */
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        flex: 0 0 95%; /* عرض بطاقة واحدة */
+        margin: 0 10px; /* مسافة جانبية صغيرة */
+    }
+    
+    .nav-button {
+        display: none; /* إخفاء الأزرار على الهواتف */
+    }
+}/* contact section starts */
+
+.contact .row {
+    display: flex;
+    /* 1. غيرنا wrap-reverse إلى wrap فقط */
+    flex-wrap: wrap; 
+    gap: 1.5rem;
+    align-items: center;
+    /* 2. تأكدي أن اتجاه العرض من اليسار لليمين افتراضياً */
+    flex-direction: row; 
+}
+
+.contact .row .image {
+    flex: 1 1 40rem;
+    /* 3. لإجبار الصورة أن تكون أول عنصر (على اليسار) */
+    order: 1; 
+}
+
+.contact .row form {
+    direction: rtl;
+    flex: 1 1 40rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border: 1rem solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    /* 4. لإجبار الفورم أن يكون ثاني عنصر (على اليمين) */
+    order: 2; 
+}
+
+.contact .row .image img{
+    width: 100%;
+    
+}
+.contact .row form .card{
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    margin: 0.7rem 0;
+    width: 100%;
+}
+.contact .row form .card:focus{
+    border-color: #fb6f92;
+}
+.contact .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+
+/* contact section end */
+/* ==================================== */
+/* 11. تذييل الصفحة (FOOTER) */
+/* ==================================== */
+
+.main-footer {
+    background-color: #ffe5ec; 
+    color: #0a0000; 
+    padding: 50px 0 20px; 
+    border-radius: 10px;
+    background-image: url(vovo.jpg); /* ممكن تحذفها لو ما فيها تأثير */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; 
+    text-align: right;
+    gap: 20px; 
+}
+
+.footer-column {
+    flex: 1 1 22%; 
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #F72585; 
+    border-bottom: 2px solid #dca3bd;
+    padding-bottom: 5px;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.footer-column p, .footer-column a {
+    color: #0b0101;
+    font-size: 20px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-column p {
+    text-align: right; 
+}
+
+.footer-column i {
+    margin-left: 10px;
+}
+
+.footer-column a:hover {
+    color: #F72585;
+    background-color: #ffe0f0; 
+    padding: 3px 6px; 
+    border-radius:10px;
+    box-shadow: 0 0 20px rgba(225, 120, 195, 0.2); 
+    transform: translateX(-3px); 
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: flex-end; 
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.social-icons a:hover {
+    color: #333;
+    background-color: #F72585;
+    border-color: #F72585;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 15px 20px 0;
+    border-top: 1px solid #555;
+    text-align: center;
+    font-size: 14px;
+    color: #070202;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-container {
+    margin-bottom: 15px;
+}
+
+.designer-text {
+    margin-top: 10px;
+    color: #2c0214; 
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/* ==================================== */
+/* تحسينات التجاوب (Responsiveness) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* تحويل الأعمدة لتصبح فوق بعضها */
+        text-align: center;    /* جعل النص في المنتصف للموبايل */
+        gap: 30px;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;       /* كل عمود يأخذ العرض كاملاً */
+        align-items: center;  /* محاذاة العناصر في المنتصف */
+    }
+
+    .footer-column h3 {
+        align-self: center;   /* محاذاة العناوين في المنتصف */
+        margin-bottom: 15px;
+    }
+
+    .footer-column p, .footer-column a {
+        text-align: center;   /* محاذاة الفقرات والروابط في المنتصف */
+    }
+
+    .footer-column ul {
+        align-items: center;  /* محاذاة القوائم في المنتصف */
+    }
+
+    .social-icons {
+        justify-content: center; /* محاذاة أيقونات التواصل في المنتصف */
+    }
+
+    .footer-column i {
+        margin-left: 0;
+        margin-right: 5px; /* تعديل مسافة الأيقونة عند التوسط */
+    }
+
+    .footer-column a:hover {
+        transform: translateY(-3px); /* تغيير اتجاه الحركة للأعلى بدلاً من اليمين */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-footer {
+        padding: 30px 0 15px; /* تقليل الهوامش في الشاشات الصغيرة جداً */
+    }
+    
+    .footer-column h3 {
+        font-size: 20px; /* تصغير حجم العنوان قليلاً */
+    }
+}

@@ -1,0 +1,1718 @@
+ @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;500;700&family=Amiri:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+
+/*
+* ====================================
+* 1. التنسيقات الأساسية (RESET & BASE)
+* (تصفير الهوامش وتحديد السلوك العام للصفحة)
+* ====================================
+*/
+
+/* تصفير الهوامش الداخلية والخارجية وضبط نموذج الصندوق لجميع العناصر */
+* {
+    margin: 0; /* تصفير الهامش الخارجي */
+    padding: 0; /* تصفير الهامش الداخلي */
+    box-sizing: border-box; /* يجعل الـ padding والـ border يُحتسبان ضمن عرض العنصر */
+}
+
+/* تحديد العرض الكامل وتعيين لون الخلفية الأساسي للصفحة */
+body, html {
+    width: 100%;
+ background-color: #ffffff;
+ color: #333;  
+    background-size: contain; /* ضبط حجم الصورة بحيث تحتوي الشاشة عليها بالكامل */
+    scroll-behavior: smooth; /* تفعيل التمرير السلس (للروابط التي تنتقل لفقرات داخل نفس الصفحة) */
+}
+
+
+/*
+* ====================================
+* 2. شريط الرأس وقائمة التنقل (HEADER & NAV)
+* ====================================
+*/
+
+/* تنسيق الشريط العلوي، تحديد اللون، الظل، والثبات في الأعلى */
+.main-header {
+    background-color: white; /* لون خلفية شريط الرأس (وردي فاتح/بنفسجي) */
+    box-shadow: 0 2px 8px rgba(0,0,0,.08); /* ظل خفيف أسفل الشريط */
+    padding: 10px 0; /* مسافة داخلية علوية وسفلية */
+    /* الخصائص التالية مهمة لتثبيت الشريط في الأعلى */
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; /* ضمان ظهور الشريط فوق باقي العناصر */
+    transition: all 0.3s; /* تأثير انتقالي سلس */
+     position: fixed;                  /* هذا يخلي الهيدر ثابت */
+    top: 0;                           /* يثبت الهيدر في الأعلى */
+    left: 0;                          /* بداية الهيدر من الجهة اليسرى */
+    width: 100%;                      /* عرض الهيدر كامل الصفحة */
+    z-index: 1000;     
+}
+
+/* حاوية داخلية لتوسيط عناصر الرأس وتوزيعها أفقيًا */
+.header-container {
+    max-width: 1200px; /* تحديد أقصى عرض للحاوية */
+    margin: 0 auto; /* توسيط الحاوية أفقياً */
+    padding: 0 20px; /* مسافة داخلية جانبية */
+    display: flex; /* تفعيل نموذج Flexbox */
+    justify-content: space-between; /* توزيع العناصر على جانبي الحاوية (الشعار والنظام/الأيقونات) */
+    align-items: center; /* توسيط العناصر عمودياً */
+}
+
+
+/* تنسيق صورة الشعار وتطبيق حركة "logo-bounce" الديناميكية */
+
+   .logo {
+    font-size: 28px;                  /* حجم الخط للشعار */
+    font-weight: 700;                  /* سمك الخط للشعار */
+    color: #ff3366;                    /* لون شعار FloSun */
+
+}
+
+
+
+/* تنسيق قائمة التنقل الرئيسية (عرض أفقي وتباين بين الروابط) */
+.main-nav ul {
+    display: flex; /* عرض الروابط أفقياً */
+    gap: 35px; /* المسافة بين الروابط */
+    font: 600 20px Arial, sans-serif; 
+    list-style: none; /* إزالة النقاط من القائمة */
+    padding: 0;
+    margin: 0;
+}
+
+
+/* تنسيق عنصر القائمة (لدعم تأثير الخط السفلي) */
+.main-nav li {
+    padding: 5px 0; 
+    position: relative; /* لتموضع القائمة المنسدلة relative إليه */
+    transition: 0.3s;
+    
+}
+
+
+/* تنسيق الروابط (لون الخط والتحول عند التمرير) */
+.main-nav a {
+    position: relative; /* لتموضع الخط السفلي (::after) relative إليه */
+    padding: 10px 0; 
+    color: #fcfcfc; /* لون الخط (أبيض) */
+    text-decoration: none;
+    display: block; 
+    transition: color 0.3s;
+    color: black;
+      font-size: 16px;                   /* حجم الخط للروابط */
+    font-weight: 500;    
+}
+
+
+/* لون الروابط عند التمرير أو التفعيل */
+.main-nav a:hover,
+.main-nav .active {
+    color: #F72585; /* لون بارز عند التفاعل */
+}
+
+
+/* تنسيق الخط السفلي الذي يظهر تحت الرابط عند التمرير (تأثير مرئي) */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* وضعه أسفل الرابط */
+    left: 50%; /* بدء من منتصف الرابط */
+    transform: translateX(-50%); /* إرجاعه لنقطة المنتصف بالضبط */
+    width: 0; /* إخفاء الخط مبدئياً */
+    height: 2px; 
+    background-color: #F72585; 
+    transition: width 0.3s ease-out; /* تأثير سلس لنمو الخط */
+}
+
+
+/* تمدد الخط السفلي لعرض 100% عند التمرير */
+.main-nav a:hover::after,
+.main-nav .active::after {
+    width: 100%; 
+}
+
+
+/*
+* ====================================
+* 3. القائمة المنسدلة والأيقونات (DROPDOWN & ICONS)
+* ====================================
+*/
+
+/* حاوية القائمة المنسدلة */
+.dropdown {
+    position: relative; /* لتموضع الـ dropdown-content absolute إليه */
+    display: inline-block; 
+}
+
+
+/* تنسيق القائمة المنسدلة المخفية (الخلفية، الظل، الإخفاء المبدئي) */
+.dropdown-content {
+    display: none; /* إخفاء مبدئي */
+    position: absolute; 
+    background-color: #fff; 
+    min-width: 180px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
+    z-index: 100; 
+    border-radius: 6px; 
+    text-align: right; 
+    top: 150%; /* وضعها بعيداً عن الرابط لإضافة تأثير ظهور من الأعلى */
+    right: 0; 
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+
+/* إظهار القائمة المنسدلة عند التمرير بتأثير سلس */
+.dropdown:hover .dropdown-content {
+    display: block; 
+    top: 100%; /* تحريكها للأعلى لأسفل الرابط مباشرة */
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* تنسيق روابط القائمة المنسدلة الداخلية */
+.dropdown-content a {
+    color: #555 !important; 
+    padding: 10px 15px; 
+    display: block; 
+    font-size: 14px; 
+    border-bottom: 1px solid #eee; 
+    transition: 0.2s;
+}
+
+
+/* تأثير التمرير على روابط القائمة المنسدلة */
+.dropdown-content a:hover {
+    background-color: #f7f7f7; 
+    color: #F72585 !important; 
+}
+
+
+/* تنسيق حاوية أيقونات السلة والمفضلة */
+.header-icons {
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    font-size: 20px; 
+    color: #333;
+}
+
+
+/* تنسيق الأيقونات (شكل دائري وتأثير التمرير) */
+.header-icons > div, .header-icons > a {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* شكل دائري */
+    transition: 0.2s;
+}
+
+
+/* تأثير التمرير على الأيقونات */
+.header-icons > div:hover, .header-icons > a:hover {
+    background-color: #fce4ec; 
+    color: #F72585;
+}
+
+
+/* لون أيقونة المفضلة (القلب) */
+.header-icons .fas.fa-heart {
+    color: #F72585; 
+    font-style: normal;   
+    text-decoration: none;
+    
+}
+
+.fas fa-heart, .icon-search, .icon-cart{
+    font-style: normal;                  /* هذه الخاصية تُستخدم لإلغاء أي ميلان في الخط.*/
+}
+/* تحديد موضع أيقونة السلة (لوضع العداد عليها) */
+.cart-icon {
+    position: relative; /* لتموضع عداد السلة (cart-count) absolute إليه */
+}
+
+
+/* تنسيق دائرة عداد العناصر في السلة (موقع، لون، وحجم الخط) */
+.cart-count {
+    position: absolute; 
+    top: -5px; 
+    right: -5px; 
+    background-color: #F72585; 
+    color: white; 
+    border-radius: 50%; 
+    padding: 2px 5px; 
+    font-size: 10px; 
+    font-weight: 700; 
+    line-height: 1; 
+    border: 1px solid #fff; 
+    z-index: 10;
+}
+
+
+/*
+* ====================================
+* 4. زر ونموذج الملاحظات (FEEDBACK)
+* ====================================
+*/
+
+/* تنسيق الزر العائم لتقديم الملاحظات (تثبيت الموقع، شكل دائري، وتأثير التكبير عند التمرير) */
+.feedback-button {
+    position: fixed; /* تثبيت الزر على الشاشة */
+    left: 20px;
+    bottom: 40px;
+    background-color: #F72585;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px; 
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+/* تأثير التكبير والظل عند التمرير على زر الملاحظات */
+.feedback-button:hover {
+    transform: scale(1.1); /* تكبير الزر */
+    box-shadow: 0 13px 24px rgba(0,0,0,0.3); 
+}
+
+
+/* تنسيق النموذج الذي يظهر لجمع الملاحظات (إخفاء مبدئي) */
+.feedback-widget {
+    position: fixed;
+    left: 20px;
+    bottom: 110px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+    display: none; /* إخفاء مبدئي (يتم إظهاره بالـ JavaScript أو بالـ CSS باستخدام الـ checkbox) */
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+/* إظهار نموذج الملاحظات باستخدام حقل الإدخال المخفي */
+#feedback-toggle:checked ~ .feedback-widget {
+    display: flex; /* يتم إظهاره عند تحديد الـ checkbox */
+}
+
+
+/* تنسيق رأس النموذج (لون الخلفية وزر الإغلاق) */
+.feedback-header {
+    background-color: #F72585;
+    color: #fff;
+    padding: 13px 16px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* تنسيق زر الإغلاق */
+.feedback-close {
+    cursor: pointer;
+}
+
+
+/* تنسيق جسم النموذج (حاوية العناصر الداخلية) */
+.feedback-body {
+    padding: 16px; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* تنسيق مربع إدخال النص للملاحظات */
+.feedback-body textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px; 
+    margin-bottom: 8px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none; /* منع المستخدم من تغيير حجم حقل النص */
+}
+
+
+/* تنسيق زر الإرسال */
+.feedback-body button {
+    padding: 8px; 
+    background-color: #F72585;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+/* تأثير التمرير على زر الإرسال */
+.feedback-body button:hover {
+    background-color: #c90059;
+}
+
+
+/*
+* ====================================
+* 5. شريط التمرير (SLIDER)
+* ====================================
+*/
+
+/* حاوية السلايدر الرئيسية (تحديد الارتفاع، الإطار، وإخفاء المحتوى الزائد) */
+.slider-box {
+    width: 100%;
+    margin: 20px 0 20px; 
+    height: 820px; /* تحديد ارتفاع ثابت للسلايدر */
+    overflow: hidden; /* إخفاء الشرائح التي تتجاوز حدود الحاوية */
+    box-shadow: 0 0 10px rgba(183, 28, 28, 0.1);
+    border-radius: 10px;
+    border: 10px solid #ffe5ec;
+}
+
+
+/* الحاوية الداخلية للشرائح (تحديد العرض الكلي لتضمين جميع الشرائح) */
+.slider-wrapper {
+    display: flex;
+    width: 600%; /* العرض الكلي (بما أن هناك 6 شرائح: 100% * 6 = 600%) */
+    height: 100%; 
+    animation: slideAnimation 18s infinite ease-in-out; /* تطبيق حركة الانزلاق التلقائية */
+}
+
+
+/* تنسيق الشريحة الواحدة (تحديد عرض الشريحة) */
+.slide-item {
+    position: relative; 
+    width: 16.666%; /* عرض الشريحة الواحدة (100% / 6 = 16.666%) */
+    height: 100%;
+}
+
+
+/* تنسيق صور الشرائح (ملء الحاوية) */
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لضمان تغطية الصورة لمساحة الشريحة بالكامل */
+}
+
+
+/* تنسيق مربع النص الموجود فوق الصورة في الشريحة (الموقع والمحاذاة) */
+.slider-text {
+    position: absolute;
+    top: 10%; 
+    right: 5%; 
+    color: #fff; 
+    text-align: right; 
+    padding: 15px 20px;
+    border-radius: 8px;
+    max-width: 40%; 
+    font-family: "Tajawal", sans-serif;
+}
+
+
+/* تنسيق عنوان النص داخل الشريحة */
+.slider-text h2 {
+    font-size: 32px; 
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: "Tajawal", sans-serif;
+}
+
+
+/* تنسيق الفقرة داخل الشريحة */
+.slider-text p {
+    font-size: 18px; 
+    font-weight: 300;
+    font-family: "Tajawal", sans-serif;
+}
+
+
+/*
+* ====================================
+* 6. الأنميشن (KEYFRAMES)
+* ====================================
+*/
+
+/* تحديد حركة الانزلاق التلقائي لشريط التمرير (تحريك الـ wrapper) */
+@keyframes slideAnimation {
+    /* كل نسبة تمثل شريحة، وتستمر الحركة لـ 1/6 من الوقت الإجمالي (16.666%) */
+    0%, 14% { transform: translateX(0%); } /* الشريحة 1 */
+    16.66%, 31% { transform: translateX(-16.666%); } /* الشريحة 2 (إزاحة لليسار بمقدار شريحة واحدة) */
+    33.32%, 47% { transform: translateX(-33.333%); } /* الشريحة 3 */
+    50%, 64% { transform: translateX(-50%); } /* الشريحة 4 */
+    66.66%, 81% { transform: translateX(-66.666%); } /* الشريحة 5 */
+    83.32%, 98% { transform: translateX(-83.333%); } /* الشريحة 6 */
+    100% { transform: translateX(0%); } /* العودة للشريحة 1 */
+}
+
+
+/* تحديد حركة الارتداد والدوران البسيطة للشعار */
+@keyframes logo-bounce {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    30% { transform: scale(1.1) rotate(3deg); } /* قفزة كبيرة مع دوران بسيط */
+    70% { transform: scale(1.05) rotate(-2deg); } /* ارتداد صغير للخلف */
+}
+
+.right-half{
+    font-family: "Tajawal", sans-serif;
+}
+/*
+* ====================================
+* 7. أقسام المنتجات والعناوين (SECTIONS & TITLES)
+* ====================================
+*/
+.about-us-section{
+    height: 600px;
+    width: 400px;
+}
+
+/* حاوية قسم المنتجات (لضبط الهوامش الداخلية والخارجية) */
+.products .oma {
+    padding: 60px 0 50px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    scroll-margin-top: 0; /* لضمان ظهور العنوان بالكامل عند الانتقال إليه عبر رابط */
+}
+
+
+/* تنسيق العنوان الرئيسي للقسم (خط سفلي بلون بارز، توسيط) */
+.products .section-title {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+    font: 700 30px/1 'sans-serif'; 
+    color: #333;
+    border-bottom: 3px solid #F72585; /* خط سفلي بارز */
+    width: fit-content; /* جعل العرض بحجم محتوى النص فقط */
+    margin-bottom: 20px;
+    font-family: "Tajawal", sans-serif;
+}
+
+
+
+
+
+
+/*
+* ====================================
+* 8. بطاقات المنتجات (PRODUCT CARDS)
+* ====================================
+*/
+
+/* حاوية البطاقات (عرض مرن ومتعدد الأعمدة) */
+.products .card_container {
+    display: flex;
+    flex-wrap: wrap; /* السماح للبطاقات بالانتقال لسطر جديد عند ضيق المساحة */
+    gap: 100px; /* المسافة بين البطاقات */
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center; /* توسيط البطاقات أفقياً */
+    
+}
+
+
+/* تنسيق البطاقة الواحدة (الظل، الحواف، وتأثير التمرير لأعلى) */
+.products .card_container .card {
+    flex: 1 1 300px; /* ينمو وينكمش، وأساس العرض هو 300 بكسل (لشاشات الكمبيوتر) */
+    max-width: calc(33.333% - 16px); /* 3 بطاقات في السطر (مع ترك مسافة صغيرة) */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+    border-radius: 10px; 
+    border: 1px solid rgba(0,0,0,0.1); 
+    position: relative;
+    transition: 0.3s;
+    background-color: #fff; 
+    overflow: hidden; 
+}
+
+
+/* تأثير رفع البطاقة عند التمرير */
+.products .card_container .card:hover {
+    transform: translateY(-5px); /* رفع البطاقة قليلاً */
+    box-shadow: 0 13px 24px rgba(0,0,0,0.15); 
+}
+
+
+/* تنسيق شارة الخصم (قص شكل منحرف) */
+.products .card_container .card .discount {
+    position: absolute;
+    top: 15px; 
+    right: 0;
+    background-color: #F72585;
+    color: #fff;
+    padding: 8px 16px 8px 22px; 
+    font: bold 14px/1 'sans-serif'; 
+    border-radius: 0 0 0 5px; 
+    clip-path: polygon(15% 0%, 100% 0, 100% 100%, 0% 100%, 0% 50%); /* إنشاء شكل منحرف فريد */
+    z-index: 100;
+}
+
+
+/* حاوية الصورة (تأثير التكبير وإخفاء المحتوى الزائد) */
+.products .card_container .card .card_img {
+    position: relative;
+    text-align: center;
+    padding-top: 24px; 
+    height: 250px; 
+    overflow: hidden; /* إخفاء جزء الصورة الخارج عند التكبير */
+}
+
+
+/* تنسيق الصورة داخل البطاقة */
+.products .card_container .card .card_img img {
+    height: 100%; 
+    width: 100%;
+    object-fit: cover; 
+    transition: 0.3s;
+}
+
+
+/* تأثير تكبير الصورة عند التمرير */
+.products .card_container .card:hover .card_img img {
+    transform: scale(1.1); /* تكبير الصورة داخل الحاوية */
+}
+
+
+/* حاوية أيقونات الإجراءات (مخفية أسفل الصورة) */
+.products .card_container .card .card_img .icons {
+    position: absolute;
+    bottom: -112px; /* مخفية تمامًا أسفل الحاوية */
+    left: 0;
+    right: 0;
+    display: flex; 
+    transition: bottom 0.3s; /* تأثير حركة للأعلى عند الإظهار */
+    z-index: 2;
+}
+
+
+/* إظهار الأيقونات عند التمرير */
+.products .card_container .card:hover .card_img .icons {
+    bottom: 0; /* تحريك الشريط للأعلى ليظهر */
+}
+
+
+/* خلفية شفافة فوق الصورة عند التمرير */
+.products .card_container .card .card_img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+
+/* إظهار التظليل الشفاف عند التمرير */
+.products .card_container .card:hover .card_img::after {
+    opacity: 1;
+}
+
+
+/* تنسيق أزرار الأيقونات داخل الشريط السفلي */
+.products .card_container .card .card_img .icons a {
+    height: 56px; 
+    line-height: 56px; 
+    font-size: 22px; 
+    background-color: #F72585;
+    color: #fff;
+    flex-grow: 1; /* جعل الأزرار تتمدد بالتساوي */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+/* تنسيق زر "أضف للسلة" (عريض) */
+.products .card_container .card .card_img .icons .card_btn {
+    border-left: 2px solid #fff7; 
+    border-right: 2px solid #fff7; 
+    flex-grow: 2; /* جعله أعرض بضعف حجم الأزرار الأخرى */
+}
+
+
+/* تأثير التمرير على أزرار الأيقونات */
+.products .card_container .card .card_img .icons a:hover {
+    background-color: #333;
+}
+
+
+/* تنسيق محتوى البطاقة (العنوان والسعر) */
+.products .card_container .card .content {
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* تنسيق عنوان المنتج (إخفاء النص الزائد) */
+.products .card_container .card .content h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    white-space: nowrap; /* منع النص من الالتفاف */
+    overflow: hidden;
+    text-overflow: ellipsis; /* إضافة نقاط (...) عند تجاوز النص */
+}
+
+
+/* تنسيق سعر المنتج الحالي */
+.products .card_container .card .content .price {
+    font-size: 20px;
+    color: #F72585;
+    font-weight: bold;
+}
+
+
+/* تنسيق السعر القديم (مخطوط عليه) */
+.products .card_container .card .content .price span {
+    font-size: 16px;
+    color: #999;
+    font-weight: normal;
+    text-decoration: line-through; /* إضافة خط في المنتصف */
+    margin-right: 5px;
+}
+
+
+/*
+* ====================================
+* 9. النافذة المنبثقة للمنتج (MODAL)
+* ====================================
+*/
+
+/* تنسيق النافذة المنبثقة الرئيسية (الشاشة السوداء الشفافة التي تغطي الصفحة) */
+.modal {
+    display: none; /* إخفاء النافذة افتراضياً */
+    position: fixed; /* تثبيت الموقع بالنسبة لنافذة العرض */
+    z-index: 2000; /* لضمان ظهورها فوق كل العناصر الأخرى */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.6); /* خلفية سوداء شفافة */
+    backdrop-filter: blur(3px); /* تأثير ضبابي خفيف على الخلفية (تأثير بصري عصري) */
+}
+
+/* تنسيق محتوى النافذة المنبثقة (الصندوق الأبيض الذي يحتوي على المنتج) */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto; /* توسيط عمودي (5% من الأعلى) وتوسيط أفقي (auto) */
+    padding: 30px;
+    border-radius: 15px;
+    width: 50%; 
+    height: 40%;
+    max-width: 850px; /* تحديد أقصى عرض للنافذة */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.4s ease-out; /* إضافة حركة ظهور سلسة */
+}
+
+/* تنسيق زر الإغلاق (X) */
+.close-btn {
+    color: #F72585;
+    float: left; /* وضعه في الزاوية اليسرى العليا */
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+}
+
+/* حاوية تفاصيل المنتج داخل الـ Modal (تقسيم الصورة والمعلومات) */
+.modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* محاذاة العناصر من الأعلى */
+    padding-top: 20px;
+}
+
+/* تنسيق حاوية الصورة داخل الـ Modal */
+.modal-img {
+    flex: 1;
+    max-width: 45%; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الصورة نفسها داخل الـ Modal */
+.modal-img img {
+    width: 100%;
+    height:300px;
+    display: block;
+}
+
+/* تنسيق حاوية المعلومات */
+.modal-info {
+    flex: 1;
+    max-width: 55%; 
+    text-align: right;
+    direction: rtl; /* اتجاه النص من اليمين لليسار */
+}
+
+/* تنسيق عنوان المنتج */
+.modal-info h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+/* تنسيق قسم النجوم والتقييم */
+.modal-info .stars {
+    color: #FFC300; /* لون ذهبي للنجوم */
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.modal-info .stars span {
+    color: #777;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+/* تنسيق وصف المنتج */
+.modal-info .description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    border-right: 3px solid #dca3bd; /* خط جانبي تزييني */
+    padding-right: 15px;
+}
+
+/* تنسيق السعر */
+.modal-info .modal-price {
+    font-size: 32px;
+    color: #F72585;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding-right: 15px;
+}
+
+/* تنسيق زر الإضافة إلى السلة (القديم، قبل إضافة مجموعة الأزرار) */
+.modal-info .add-to-cart {
+    background-color: #F72585;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(247, 37, 133, 0.3);
+}
+
+.modal-info .add-to-cart:hover {
+    background-color: #c90059;
+    transform: translateY(-2px);
+}
+
+/* حركة الظهور (Keyframe) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/*
+* ====================================
+* 10. آراء الزبائن (TESTIMONIALS)
+* ====================================
+*/
+
+/* تنسيق قسم الآراء (لون الخلفية) */
+.testimonials-section {
+    padding: 5px;
+    
+    text-align: center;
+}
+
+
+/* تنسيق عنوان قسم الآراء */
+.testimonials-section .section-title {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 10px 0;
+    font: 700 30px/1 'sans-serif'; 
+    color: #333;
+    border-bottom: 3px solid #F72585;
+    width: fit-content;
+}
+
+
+/* حاوية الآراء (استخدام Grid للعرض المتعدد الأعمدة) */
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* عرض البطاقات في أعمدة متساوية، بحد أدنى 300 بكسل */
+    gap: 30px; 
+    margin-bottom: 70px; /* مسافة سفلية للفصل بين القسم والتذييل */
+}
+
+
+/* تنسيق بطاقة الرأي الواحد (الظل، الحواف، وتأثير الرفع عند التمرير) */
+.testimonial-card {
+    background-color: #fff;
+    padding: 30px;
+    padding-bottom: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+
+/* تأثير رفع البطاقة عند التمرير */
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* تنسيق نجوم التقييم */
+.testimonial-card .rating {
+    margin-bottom: 5px;
+}
+
+
+/* لون وحجم أيقونات النجوم */
+.testimonial-card .rating i {
+    color: #FFC300; 
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+
+/* تنسيق نص الرأي (خط مائل وحدود جانبية) */
+.testimonial-card .quote {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+    font-style: italic; /* خط مائل */
+    border-right: 3px solid #dca3bd; 
+    padding-right: 10px;
+}
+
+
+/* حاوية معلومات العميل (الاسم والصورة) */
+.testimonial-card .client-info {
+    margin-top: auto; /* يدفع العنصر للأسفل (مهم في Flexbox/column) */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    direction: ltr; /* لتغيير ترتيب عناصر العميل (الاسم يمين الصورة) */
+}
+
+
+/* تنسيق صورة العميل (شكل دائري وإطار) */
+.testimonial-card .client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #F72585; 
+    order: 2; /* لوضعها على اليسار عند استخدام اتجاه LTR */
+}
+
+
+/* تنسيق اسم العميل */
+.testimonial-card .client-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    text-align: right;
+}
+
+
+/* تنسيق مسمى العميل الوظيفي/صفته */
+.testimonial-card .client-title {
+    color: #F72585;
+    font-size: 20px;
+    text-align: right;
+}
+
+
+/*
+* ====================================
+* 11. تذييل الصفحة (FOOTER)
+* ====================================
+*/
+
+.main-footer {
+    background-color: #ffe5ec; 
+    color: #0a0000; 
+    padding: 50px 0 20px; 
+    border-radius: 10px;
+    
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; 
+    text-align: right;
+    gap: 20px; 
+}
+
+.footer-column {
+    flex: 1 1 22%; 
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #F72585; 
+    border-bottom: 2px solid #dca3bd;
+    padding-bottom: 5px;
+    width: fit-content;
+    align-self: flex-end; /* لمحاذاة العنوان لليمين داخل العمود */
+}
+
+.footer-column p, .footer-column a {
+    color: #0b0101;
+    font-size: 20px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-column p {
+    text-align: right; 
+}
+
+.footer-column i {
+    margin-left: 10px;
+}
+
+.footer-column a:hover {
+    color: #F72585;
+    background-color: #ffe0f0; 
+    padding: 3px 6px; 
+    border-radius:10px;
+    box-shadow: 0 0 20px rgba(225, 120, 195, 0.2); 
+    transform: translateX(-3px); 
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* لمحاذاة عناصر القائمة لليمين */
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: flex-end; /* محاذاة أيقونات التواصل لليمين */
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.social-icons a:hover {
+    color: #333;
+    background-color: #F72585;
+    border-color: #F72585;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 15px 20px 0;
+    border-top: 1px solid #555;
+    text-align: center;
+    font-size: 14px;
+    color: #070202;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-container {
+    margin-bottom: 15px;
+}
+
+.logo-footer img {
+    width: 120px; 
+    filter: invert(100%); /* قلب ألوان الشعار ليناسب خلفية التذييل (إذا كانت داكنة) */
+}
+
+.designer-text {
+    margin-top: 10px;
+    color: #2c0214; 
+    font-weight: bold;
+    font-size: 15px;
+}
+.section-title{
+     font-family: "Tajawal", sans-serif; 
+}
+
+/*
+* ====================================
+* 12. استجابة الشاشات (MEDIA QUERIES)
+* ====================================
+*/
+
+/* تعديلات للشاشات اللوحية (أقل من 992 بكسل) */
+@media (max-width: 992px) {
+    /* تقليل المسافات في قائمة التنقل */
+    .main-nav ul {
+        gap: 20px;
+        font-size: 18px;
+    }
+    
+    /* ضبط الهوامش الداخلية للرأس */
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    /* تقليل ارتفاع شريط التمرير */
+    .slider-box {
+        height: 500px;
+    }
+    
+    /* عرض البطاقات في عمودين (50% من العرض) */
+    .products .card_container .card {
+        flex: 1 1 calc(50% - 12px);
+        max-width: calc(50% - 12px);
+    }
+    
+    /* تعديل حجم وشكل الـ Modal على الشاشات اللوحية */
+    .modal-content {
+    background-color: #fff;
+    
+    /* الخصائص الجديدة للتوسيط الرأسي والأفقي */
+    position: absolute; /* تغيير من relative إلى absolute لتطبيق top/left */
+    top: 50%; /* ابدأ من منتصف الشاشة عمودياً */
+    left: 50%; /* ابدأ من منتصف الشاشة أفقياً */
+    transform: translate(-50%, -50%); /* ارجع للخلف بمقدار نصف عرض وطول الصندوق لتوسيته تماماً */
+    
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%; /* زيادة عرض الـ Modal للاستفادة من مساحة الشاشة */
+    max-width: 850px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* إزالة الـ animation: fadeIn 0.4s ease-out; من هنا ونقلها للـ modal container (إذا أردت ذلك) */
+}
+    }
+
+
+
+/* تعديلات للشاشات الصغيرة (الهواتف - أقل من 768 بكسل) */
+@media (max-width: 768px) {
+    /* إخفاء الشعار في شاشات الجوال */
+    .logo {
+        display: none !important;
+    }
+    
+    /* الإبقاء على روابط التنقل وإلغاء إخفائها لو كانت مخفية */
+    .main-nav {
+        display: flex; 
+    }
+    
+    /* إعادة توزيع محتوى الرأس */
+    .header-container {
+        justify-content: center; /* توسيط الروابط والأيقونات المتبقية */
+    }
+    
+    /* تقليل ارتفاع شريط التمرير */
+    .slider-box {
+        height: 400px;
+    }
+    
+    /* نقل النص إلى أسفل السلايدر وتوسيعه على الشاشة */
+    .slider-text {
+        max-width: 90%;
+        top: unset;
+        bottom: 5%;
+        right: 50%;
+        transform: translateX(50%); /* توسيط أفقي في الأسفل */
+        text-align: center;
+    }
+    
+    /* تصغير حجم عنوان السلايدر */
+    .slider-text h2 {
+        font-size: 24px;
+    }
+    
+    /* إخفاء فقرة النص في السلايدر */
+    .slider-text p {
+        display: none; 
+    }
+    
+    /* تعديل موقع زر الملاحظات */
+    .feedback-button {
+        left: 15px;
+        bottom: 20px;
+    }
+    
+    /* تعديل موقع نافذة الملاحظات */
+    .feedback-widget {
+        left: 15px;
+        bottom: 80px;
+    }
+    
+    /* عرض البطاقات في عمود واحد (100% من العرض) */
+    .products .card_container .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    /* تصغير حجم عنوان القسم */
+    .products .section-title {
+        font-size: 24px;
+        padding: 24px 15px 10px; 
+    }
+    
+    /* تنسيق الـ Modal في شاشات الجوال (عرض الصورة فوق النص) */
+    .modal-body {
+        flex-direction: column; /* عرض العناصر عمودياً */
+        gap: 15px;
+    }
+    
+    /* جعل الصورة تأخذ العرض الكامل */
+    .modal-img {
+        max-width: 100%;
+        order: 1; /* عرض الصورة أولاً */
+    }
+    
+    /* جعل المعلومات تأخذ العرض الكامل */
+    .modal-info {
+        max-width: 100%;
+        order: 2; /* عرض المعلومات ثانياً */
+    }
+    
+    /* تعديل محاذاة النص في الـ Modal */
+    .modal-info h2 {
+        font-size: 24px;
+    }
+    
+    .modal-info .modal-price {
+        font-size: 28px;
+    }
+    
+    /* تصغير حجم تذييل الصفحة وتغيير اتجاهه */
+    .footer-content {
+        flex-direction: column; /* تحويل الأعمدة إلى صفوف مكدسة */
+        text-align: center;
+    }
+
+    .footer-column {
+        align-items: center; /* توسيط محتوى العمود */
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+        align-self: center; /* توسيط عنوان العمود */
+        border-bottom: 2px solid #F72585; 
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+
+    .footer-column p, .footer-column a {
+        text-align: center; 
+        font-size: 16px;
+    }
+
+    .footer-column ul {
+        align-items: center; 
+    }
+    
+
+    .social-icons {
+        justify-content: center; /* توسيط أيقونات التواصل */
+    }
+
+    /* تنسيق قسم آراء الزبائن على الهواتف */
+    .testimonials-container {
+        grid-template-columns: 1fr; /* عمود واحد فقط */
+        gap: 20px;
+    }
+    
+    /* تقليل المسافات الداخلية للبطاقة */
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+    قسم من نحن مع فيديو خلفية
+================================ */
+/* تم دمج الأقسام الـ 3 التالية في تنسيق واحد */
+.about-us-section {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content-wrapper {
+    width: 90%;
+    max-width: 1400px;
+    display: flex; /* لتقسيم النص والفيديو أفقياً */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.left-half {
+    width: 50%; /* نصف القسم للفيديو */
+    position: relative;
+    overflow: hidden;
+}
+
+.left-video {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover; /* يغطي المساحة بالكامل بدون حواف سوداء */
+}
+
+.right-half {
+    width: 50%;
+    background-color: #fff0f5; /* خلفية فاتحة للنص */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right; /* يجعل النص على اليمين */
+    direction: rtl; /* يجعل اتجاه النص من اليمين لليسار */
+}
+
+.right-half h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.right-half p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+
+/* ------------------------------------
+    1. تنسيق المحتوى النصي (اليمين)
+    ------------------------------------ */
+.about-text-content {
+    flex: 1; /* يأخذ مساحة متساوية (50%) */
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* توسيط المحتوى عمودياً */
+    text-align: right;
+    direction: rtl;
+    background-color: #fce4ec; 
+}
+
+/* تنسيق العنوان الرئيسي "من نحن" */
+.about-title {
+    font-size: 60px; 
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+/* تنسيق الكلمة الداكنة */
+.about-title .dark-word {
+    font-weight: 700;
+    color: #F72585; 
+    border-bottom: 3px solid #dca3bd;
+    padding-bottom: 5px;
+}
+
+/* تنسيق الكلام الطويل عن ماضي الموقع */
+.about-description {
+    font-size: 20px; 
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------
+    2. تنسيق حاوية الفيديو (اليسار)
+    ------------------------------------ */
+.about-video-container {
+    flex: 1; /* يأخذ مساحة متساوية (50%) */
+    position: relative;
+    min-height: 600px; /* لضمان ارتفاع مناسب وكافي للفيديو */
+    overflow: hidden;
+}
+
+.about-bg-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* لضمان تغطية الإطار بالكامل دون تشويه */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* ====================================
+    استجابة الشاشات (Media Queries)
+    ==================================== */
+
+@media (max-width: 992px) {
+    .about-content-wrapper {
+        flex-direction: column; /* تكديس العناصر عمودياً */
+        min-height: auto;
+    }
+    
+    .about-text-content {
+        order: 2; /* النص يظهر بعد الفيديو (في هذا التنسيق) */
+        padding: 40px 25px;
+    }
+
+    .about-video-container {
+        order: 1; /* الفيديو يظهر أولاً (في هذا التنسيق) */
+        min-height: 350px; /* تقليل ارتفاع الفيديو في الشاشات الأصغر */
+    }
+
+    .about-title {
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .about-text-content {
+        text-align: right;
+    }
+
+    .about-description {
+        font-size: 18px;
+    }
+}
+/* ====================================
+    استجابة الشاشات (Mobile/Tablet)
+    ==================================== */
+/* هذا القسم يكرر ويعدل بعض قيم القسم السابق (992px) */
+@media (max-width: 992px) {
+    .about-content-wrapper {
+        flex-direction: column; /* تكديس العناصر عمودياً */
+        min-height: auto;
+    }
+    
+    .about-text-content {
+        padding: 40px 20px;
+        order: 1; /* يبقى المحتوى النصي في الأعلى (تعديل على الترتيب السابق) */
+    }
+
+    .about-video-container {
+        min-height: 350px; /* تحديد ارتفاع ثابت للفيديو في الجوال */
+        order: 2; /* الفيديو يأتي أسفل النص */
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+/* ===============================
+    استجابة الشاشات (Mobile/Tablet)
+================================ */
+/* هذا القسم يستهدف شاشات أصغر (768px) ويتضمن المزيد من التعديلات */
+@media (max-width: 768px) {
+    .about-video-section {
+        height: auto; /* السماح بتغيير الارتفاع */
+        padding: 80px 0; 
+    }
+
+    .about-content {
+        flex-direction: column; /* تكديس العناصر عمودياً على الجوال */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .left-half, .right-half {
+        width: 100%; /* جعل النصف يأخذ العرض الكامل */
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+
+    .right-half .about-image {
+        max-width: 100%;
+        margin: 0 auto; /* توسيط الصورة */
+    }
+
+    .left-half p {
+        font-size: 18px;
+        border-right: none; /* إزالة الخط الجانبي */
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .right-half h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+/* Modal Box */
+/* --- النافذة الرئيسية (تم تكبيرها) --- */
+.modal-content {
+    background-color: #fff;
+    width: 95%;             /* تأخذ مساحة أكبر من الشاشة */
+    max-width: 1000px;      /* تم التكبير من 800 إلى 1100 */
+    min-height: 550px;      /* إضافة حد أدنى للطول لضمان شكل متناسق */
+    border-radius: 20px;    /* حواف أنعم قليلاً */
+    position: relative;
+    padding: 3rem;          /* زيادة الهامش الداخلي من 2rem إلى 3rem */
+    margin: 2% auto;        /* لتوسيطها في الشاشة */
+    animation: fadeIn 0.4s ease;
+    direction: rtl;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2); /* إضافة ظل أعمق */
+}
+
+/* تأثير fade in */
+@keyframes fadeIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* زر الإغلاق (تم ضبط موقعه ليتناسب مع الحجم الجديد) */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 2.8rem;
+    cursor: pointer;
+    color: #333;
+    line-height: 1;
+    z-index: 10;
+}
+.close-btn:hover { color: #fb6f92; }
+
+/* توزيع المحتوى */
+.modal-body {
+    display: flex;
+    gap: 3.5rem;            /* زيادة الفراغ بين الصورة والنص من 2 إلى 3.5 */
+    flex-wrap: nowrap;      /* منع النزول لسطر جديد في الشاشات الكبيرة */
+    align-items: center;
+}
+
+/* صورة المودال (تم تكبيرها) */
+.modal-img { 
+    flex: 1.2;             /* الصورة تأخذ مساحة أكبر */
+    min-width: 350px;      /* زيادة الحد الأدنى لعرض الصورة */
+    text-align: center; 
+}
+.modal-img img { 
+    width: 100%; 
+    height: auto;
+    max-height: 500px;     /* تحديد أقصى طول للصورة لضمان عدم خروجها من النافذة */
+    border-radius: 15px; 
+    object-fit: cover;
+}
+
+/* معلومات المودال */
+.modal-info { 
+    flex: 1.5; 
+    min-width: 300px; 
+}
+.modal-info h2 { 
+    font-size: 2.8rem;     /* تكبير الخط من 2rem إلى 2.8rem */
+    color: #333; 
+    margin-bottom: 1.5rem; 
+    font-weight: 700;
+}
+
+/* نجوم التقييم */
+.stars { 
+    color: #ffb703; 
+    margin-bottom: 1.5rem; 
+    font-size: 1.5rem;     /* تكبير النجوم قليلاً */
+}
+
+/* وصف المنتج */
+.description { 
+    font-size: 1.3rem;     /* تكبير الخط من 1.1 إلى 1.3 */
+    color: #555; 
+    line-height: 1.8;      /* تباعد أسطر مريح أكثر */
+    margin-bottom: 2rem; 
+}
+
+/* سعر المنتج */
+.modal-price { 
+    font-size: 2.5rem;     /* تكبير السعر من 1.8 إلى 2.5 */
+    color: #fb6f92; 
+    font-weight: bold; 
+    margin-bottom: 2rem; 
+}
+
+/* زر الإضافة إلى السلة */
+.add-to-cart {
+    background-color: #fb6f92;
+    color: white;
+    padding: 1.2rem 2.5rem; /* زيادة حجم الزر */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4rem;      /* تكبير نص الزر */
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.add-to-cart:hover { 
+    background-color: #333; 
+    transform: translateY(-3px); /* رفعة خفيفة عند التمرير */
+}
+
+/* ريسبونسيف للهواتف */
+/* تنسيق النافذة للهواتف (توسيط كامل وتصغير) */
+/* تنسيق النافذة للهواتف (توسيط كامل للنافذة وللصورة) */
+@media (max-width: 768px) {
+    .modal-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;           
+        max-width: 350px;     
+        max-height: 85vh;     
+        padding: 1.5rem;
+        border-radius: 15px;
+        overflow-y: auto;     
+        margin: 0;            
+        box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    }
+
+    .modal-body { 
+        flex-direction: column; 
+        gap: 1rem; 
+        text-align: center; /* يضمن توسيط النصوص */
+        display: flex;
+        align-items: center; /* يضمن توسيط العناصر داخل الحاوية */
+    }
+
+    /* توسيط الصورة في المنتصف */
+    .modal-img {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* توسيط أفقي محتوى الصورة */
+        align-items: center;
+    }
+
+    .modal-img img {
+        max-height: 160px;    
+        width: auto;
+        max-width: 100%;      /* تمنع الصورة من الخروج عن الإطار */
+        margin: 0 auto;       /* يضمن التوسيط في حال كان العنصر block */
+        border-radius: 8px;
+        display: block;       /* ضروري لعمل margin auto */
+    }
+
+    .modal-info {
+        width: 100%;
+    }
+
+    .modal-info h2 {
+        font-size: 1.4rem; 
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem; 
+        margin-bottom: 1rem;
+    }
+
+    .modal-price {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}

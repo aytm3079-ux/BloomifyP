@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BLOOMIFY متجر</title>
+    <link rel="icon" type="image/png" href="image/icon.jpg">
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <script src="script.js"></script>
+</head>
+
+
+<body>
+
+
+    <!-- الهيدر الرئيسي للموقع -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- حاوية تجمع الشعار، القائمة، والأيقونات -->
+            <div class="logo">
+                <!-- قسم الشعار -->
+                <img src="image/logo.png" alt="logo" width="150px">
+                <!-- صورة الشعار -->
+            </div>
+            <nav class="main-nav">
+                <!-- شريط التنقل الرئيسي -->
+                <ul>
+                    <!-- قائمة الروابط -->
+                    <li class="dropdown">
+                        <!-- عنصر قائمة يحتوي على Dropdown -->
+                        <a href="javascript:void(0)" class="dropbtn">
+                            بوكسات هدايا جاهزة حسب المناسبة
+                        </a>
+                        <!-- زر فتح القائمة المنسدلة -->
+                        <div class="dropdown-content">
+                            <!-- محتوى القائمة المنسدلة -->
+                            <a href="#birthday-section" title="اذهب إلى قسم هدايا عيد الميلاد">
+                                عيد ميلاد
+                            </a>
+
+                            <a href="#grad-section" title="اذهب إلى قسم هدايا التخرج">
+                                تخرج
+                            </a>
+                            <a href="#m-day" title="اذهب إلى قسم هدايا  عيد الام">
+                                عيد الام
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <!-- روابط الأقسام الأخرى -->
+                    <li><a href="#cardt" title="اذهب إلى قسم باقات التهنئة">بطاقات تهنئة</a></li>
+                    <li><a href="#doll" title="اذهب إلى قسم الدمى ">الدمى</a></li>
+                    <li><a href="#balon" title="اذهب إلى قسم البالونات">بالونات</a></li>
+                    <li><a href="#perfume" title="اذهب إلى قسم بطاقات العطور">عطور</a></li>
+                    <li>
+                        <a href="Index.html" class="back-home-btn">العودة للرئيسية</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <!-- أيقونات الهيدر (السلة – البحث – المفضلة) -->
+                <div class="cart-icon">
+                    <!-- أيقونة سلة المشتريات -->
+                    <span class="cart-count">3</span>
+                    <!-- عدد العناصر في السلة -->
+                    <i class="icon-cart">🛒</i>
+                </div>
+                <div class="search-icon">
+                    <!-- أيقونة البحث -->
+                    <i class="icon-search">🔍</i>
+                </div>
+                <a href="#" class="fas fa-heart" title="المفضلة" style="color: #F72585;">
+                    <!-- أيقونة المفضلة -->
+                </a>
+            </div>
+
+        </div>
+    </header>
+    <!--  نهاية الهيدر الرئيسي للموقع  -->
+
+    <!-- بداية  زر الملاحظات -->
+    <label for="feedback-toggle" class="feedback-button">
+        <i class="fas fa-comment-alt"></i>
+    </label>
+
+    <!-- نموذج الملاحظات مخفي -->
+    <input type="checkbox" id="feedback-toggle" style="display:none;">
+
+    <div class="feedback-widget">
+        <div class="feedback-header">
+            <h3><i class="fas fa-pen"></i> ملاحظاتك</h3>
+            <label for="feedback-toggle" class="feedback-close">
+                <i class="fas fa-times"></i>
+            </label>
+        </div>
+        <div class="feedback-body">
+            <form action="#" method="post">
+                <textarea name="feedback" placeholder="اكتب ملاحظتك هنا..."></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </div>
+    <!--نهاية زر الملاحظات-->
+
+
+    <!--فيديو المقدمة-->
+
+
+    <section class="gift-intro-section">
+        <div class="bg-gradient-soft"></div>
+
+        <div class="intro-grid">
+
+            <div class="video-wrapper">
+                <div class="video-inner">
+                    <video autoplay muted loop playsinline class="creative-video">
+                        <source src="video/IMG_9208.MP4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="shape-back"></div>
+            </div>
+
+            <div class="text-wrapper">
+                <div class="glass-effect">
+                    <span class="label">عالم من الجمال</span>
+                    <h2>لأن التفاصيل <br> <span class="accent-text">تصنع الفرق</span></h2>
+                    <p>نجمع لك في متجرنا أرقى الهدايا التي تُصاغ بكل حب؛ من بهجة البالونات إلى رقة الدمى وفخامة العطور.
+                        نحن هنا لنجعل من هديتك ذكرى تدوم.</p>
+                    <div class="cta-area">
+                        <a href="#perfume" class="explore-link">تصفح المجموعة <i
+                                class="fas fa-long-arrow-alt-left"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--  نهاية فيديو المقدمة -->
+    <!--  بدايةالخط الفاصل وقسم العطور  -->
+
+    <div class="elegant-divider">
+        <div class="line-container">
+            <div class="glowing-line"></div>
+            <div class="title-wrap">
+                <span class="dot"></span>
+                <h3 class="delicate-title">قسم العطور والنفحات الراقية</h3>
+                <span class="dot"></span>
+            </div>
+            <div class="glowing-line"></div>
+        </div>
+    </div>
+
+
+    <!--  نهايةالخط الفاصل وقسم العطور  -->
+
+
+
+    <!-- بداية بطاقات المنتجات-->
+    <section class="products">
+
+        <div id="perfume" class="card_container">
+            <div class="card" data-description="• الاسم: عود أصفهان (Oud Ispahan)    عطر نسائي/ رجالي 
+• الدار: كريستيان ديور (Christian Dior).
+• بلد المنشأ: فرنسا 🇫🇷.
+• المكونات: صمغ اللابدانوم، ورد دمشقي، وعود
+ ">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="perfume/(Dior).jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> عود أصفهان (Oud Ispahan)</h3>
+                    <p> كريستيان ديور (Christian Dior).</p>
+                    <div class="price">1420 د.ل </div>
+                </div>
+            </div>
+
+            <div class="card" data-description="  بلاك أوبيوم(Black Opium)  عطر نسائي
+• الماركة: إيف سان لوران (YSL).
+• بلد المنشأ: فرنسا 🇫🇷.
+• المكونات: القهوة السوداء، الفانيليا، والزهور البيضاء.">
+                <span class="discount">-5%</span>
+                <div class="card_img"><img src="perfume/black.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>عطر بلاك أوبيوم (Black Opium)</h3>
+                    <p> إيف سان لوران (YSL).</p>
+                    <div class="price">850 د.ل <span>1110 د.ل</span></div>
+                </div>
+            </div>
+
+            <div class="card" data-description=" بلاك أوركيد (Black Orchid)   عطر نسائي/ رجالي 
+• الماركة: توم فورد (Tom Ford)
+• بلد المصنع: الولايات المتحدة الأمريكية 🇺🇸 
+• المكونات: أوركيد أسود، باتشولي، بخور، وشوكولاتة داكنة">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="perfume/Tom Ford Black.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بلاك أوركيد (Black Orchid)</h3>
+                    <p>توم فورد (Tom Ford) </p>
+                    <div class="price">1100 د.ل </div>
+                </div>
+            </div>
+
+            <div class="card" data-description="عطر قود قيرل (Good Girl Blush)   عطر نسائي
+• الماركة: كارولينا هيريرا (Carolina Herrera)
+• بلد المصنع: إسبانيا 🇪🇸 
+• المكونات: ورد الفاوانيا، فانيليا، ولوز مر">
+                <span class="discount">-18%</span>
+                <div class="card_img"><img src="perfume/gode.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> قود قيرل (Good Girl Blush)</h3>
+                    <P>كارولينا هيريرا (Carolina Herrera).</P>
+                    <div class="price">700 د.ل <span>950 د.ل</span></div>
+                </div>
+            </div>
+
+            <div class="card" data-description="عطر سوفاج (Sauvage Eau de Parfum) عطر رجالي
+• الماركة: ديور (Dior).
+• بلد المنشأ: فرنسا 🇫🇷.
+• المكونات: برغموت، فلفل سيتشوان، واللافندر، مع لمسة من الفانيليا.">
+                <span class="discount">SOLD OUT</span>
+                <div class="card_img"><img src="perfume/dior.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> سوفاج (Sauvage Eau de Parfum)</h3>
+                    <P> ديور (Dior)</P>
+                    <div class="price">420 د.ل <span>550 د.ل</span></div>
+                </div>
+            </div>
+
+            <div class="card" data-description="عطر بوس بوتلد (Boss Bottled)  عطر رجالي
+• الماركة: هوغو بوس (Hugo Boss)
+• بلد المصنع: ألمانيا 🇩🇪 
+• المكونات: تفاح أخضر، قرفة، وأخشاب الصندل">
+                <span class="discount">-15%</span>
+                <div class="card_img"><img src="perfume/HUGO BOSS.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> بوس بوتلد (Boss Bottled)</h3>
+                    <P>هوغو بوس (Hugo Boss)</P>
+                    <div class="price">450 د.ل <span>600 د.ل</span></div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <!-- *****************************************-->
+
+
+
+
+        <!--  بدايةالخط الفاصل وقسم البالونات  -->
+
+        <div class="elegant-divider">
+            <div class="line-container">
+                <div class="glowing-line"></div>
+                <div class="title-wrap">
+                    <span class="dot"></span>
+                    <h3 class="delicate-title">عالم البالونات والبهجة.....ألوان تملأ لحظاتكم سعادة</h3>
+                    <span class="dot"></span>
+                </div>
+                <div class="glowing-line"></div>
+            </div>
+        </div>
+
+
+        <!--  نهايةالخط الفاصل وقسم البالونات  -->
+
+
+        <div id="balon" class="card_container">
+            <div class="card"
+                data-description="تنسيق يتكوّن من بالون وردي كبير على شكل نجمة، مع بالونات وردية وشفافة، مزيّن بلمسة زهور بسيطة لإطلالة ناعمة">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="balloon/222.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>باقة بالونات وردية </h3>
+                    <div class="price">85 د.ل </div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="تنسيق يحتوي على بالونات باللون الذهبي مع بالونات شفافة محشوة كونفيتي لامع، يعطي شكل فخم ومناسب للاحتفالات">
+                <span class="discount">-10%</span>
+                <div class="card_img"><img src="balloon/jpg(19).jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>باقة بالونات الذهبية</h3>
+                    <div class="price">65 د.ل <span>75 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card" data-description="تنسيق يتكوّن من بالونات وردية على شكل قلوب مع بالون شفاف كبير">
+                <span class="discount">SOLD OUT</span>
+                <div class="card_img"><img src="balloon/555.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>باقة بالونات قلوب لامعة</h3>
+                    <div class="price">60 د.ل </div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="تنسيق بالونات بألوان الأبيض والأزرق الفاتح، مناسب لاستقبال مولود أو حفلات الأطفال.">
+                <span class="discount">-12%</span>
+                <div class="card_img"><img src="balloon/1212.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>باقة بالونات سماوية </h3>
+                    <div class="price">80 د.ل <span>105 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card" data-description="تنسيق يحتوي على ثلاثة مجموعة بالونات بألوان وأشكال متنوعة ">
+                <span class="discount">-10%</span>
+                <div class="card_img"><img src="balloon/1111.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>باقة بالونات بزخرفة رخامية</h3>
+                    <div class="price">135 د.ل <span>160 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="مجموعتين من البالونات شفاف والاوف وايت كبيرة مزينة بفيونكة أنيقة مع زينة داخلية بسيطة ">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="balloon/1313.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>باقة بالونات كلاسيك </h3>
+                    <div class="price">110 د.ل </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- *****************************************-->
+
+        <!--  بدايةالخط الفاصل وقسم الدمى  -->
+
+        <div class="elegant-divider">
+            <div class="line-container">
+                <div class="glowing-line"></div>
+                <div class="title-wrap">
+                    <span class="dot"></span>
+                    <h3 class="delicate-title">دمى صنعت بحب.. لتكون رفيقة اللحظات الجميلة</h3>
+                    <span class="dot"></span>
+                </div>
+                <div class="glowing-line"></div>
+            </div>
+        </div>
+
+
+        <!--  نهايةالخط الفاصل وقسم الدمى  -->
+
+
+
+
+
+        <div id="doll" class="card_container">
+            <div class="card"
+                data-description="مجموعة محاكة يدوياً (كروشيه) ناعمة، تشمل دمية صغيرة وحذاء مواليد، مثالية كهدية استقبال مولودة جديدة.">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="dool/100.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>طقم وردي للأطفال</h3>
+                    <div class="price">120 د.ل </div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="دمية دبدوب كروشيه بخيوط مخملية دافئة، منسق داخل سلة خوص أنيقة ليعطي لمسة ريفية رقيقة.">
+                <span class="discount">-12%</span>
+                <div class="card_img"><img src="dool/102.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> دبدوب الكوزي</h3>
+                    <div class="price">60 د.ل <span>85 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="دمى كروشيه صغيرة ومنوعة داخل صندوق هدايا، جاهزة لتقديمها كذكرى لطيفة تدوم طويلاً">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="dool/66.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> بوكس الأصدقاء</h3>
+                    <div class="price">165 د.ل</div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="شخصية النمر الوردي الشهيرة مصنوعة يدوياً بغرز متقنة وخيوط لطيفة على ملمس الطفل"><span
+                    class="discount">SOLD OUT</span>
+                <div class="card_img"><img src="dool/11.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> بنك بانثر</h3>
+                    <div class="price">95 د.ل </div>
+                </div>
+            </div>
+            <div class="card" data-description="دمية لولو الصغيرة مع صديقها اليونيكورن، منسقة في بوكس أنيق ">
+                <span class="discount">-16%</span>
+                <div class="card_img"><img src="dool/22.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>مجموعة الخيال</h3>
+                    <div class="price">75 د.ل <span>100 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="دبدوب أنيق يرتدي ملابس محاكة يدوياً، يتميز بتفاصيل دقيقة تجعل منه قطعة ديكور مميزة">
+                <span class="discount">-8%</span>
+                <div class="card_img"><img src="dool/101.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> دبدوب "كلاسيك</h3>
+                    <div class="price">60<span>85</span></div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- *****************************************-->
+
+        <!--  بدايةالخط الفاصل وقسم الكروت  -->
+        <div class="elegant-divider">
+            <div class="line-container">
+                <div class="glowing-line"></div>
+                <div class="title-wrap">
+                    <span class="dot"></span>
+                    <h3 class="delicate-title">لأن بعض المشاعر لا تكتمل .. إلا بكلمات مكتوبة</h3>
+                    <span class="dot"></span>
+                </div>
+                <div class="glowing-line"></div>
+            </div>
+        </div>
+
+
+        <!--  نهايةالخط الفاصل وقسم الكروت  -->
+
+        <div id="cardt" class="card_container">
+            <div class="card"
+                data-description=" بطاقة بيضاء ناصعة بتفاصيل بارزة، صُممت لتكتب فيها كلماتك بصفاء ونقاء تام.">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="card/00.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بطاقة رسالة السحاب</h3>
+                    <div class="price">35د.ل </div>
+                </div>
+            </div>
+            <div class="card"
+                data-description=" بلمسة الريشة الناعمة والختم الشمعي، هذه البطاقة تحول كلماتك إلى ذكرى تاريخية لا تُنسى.">
+                <span class="discount">-19%</span>
+                <div class="card_img"><img src="card/33.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بطاقة ختْم المشاعر</h3>
+                    <div class="price">25 د.ل <span>35 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="مغلفة بشريط ساتان فاخر يربط بين أناقة اللون الزيتي وعمق مشاعرك المكتوبة"><span
+                    class="discount">-14%</span>
+                <div class="card_img"><img src="card/100.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بطاقة فخامة الزمرد</h3>
+                    <div class="price">20 د.ل <span>45 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description=" مزيج من اللون الأسود والذهبي العتيق، بطاقة تعكس القوة والفخامة في كل حرف تكتبه.">
+                <span class="discount">SOLD OUT</span>
+                <div class="card_img"><img src="card/102.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بطاقة عراقة الرخام</h3>
+                    <div class="price">35 د.ل </div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="بطاقة مستوحاة من الطبيعة، تجمع بين ورق الكرافت والزهور المجففة لتعطي شعوراً بالدفء والبساطة.">
+                <span class="discount">-10%</span>
+                <div class="card_img"><img src="card/88.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بطاقة عبق الطبيعة</h3>
+                    <div class="price">15 د.ل <span>25 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description=" لون هادئ وتفاصيل رقيقة من زهور الجيبسوفيلا، لتنقل كلماتك برقة وجمال لكل عزيز."><span
+                    class="discount">NEW</span>
+                <div class="card_img"><img src="card/101.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بطاقة إشراقة ليفندر</h3>
+                    <div class="price">35د.ل </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- *****************************************-->
+        <!-- بدايةالخط الفاصل وقسم عيد الميلاد  -->
+        <div class="elegant-divider">
+            <div class="line-container">
+                <div class="glowing-line"></div>
+                <div class="title-wrap">
+                    <span class="dot"></span>
+                    <h3 class="delicate-title">اصنع لهم لحظات لا تُنسى في يوم ميلادهم</h3>
+                    <span class="dot"></span>
+                </div>
+                <div class="glowing-line"></div>
+            </div>
+        </div>
+
+
+        <!-- بدايةالخط الفاصل وقسم عيد الميلاد  -->
+
+
+        <div class="card_container" id="birthday-section">
+            <div class="card"
+                data-description="بوكس شفاف يظهر جمال الكيكة الفاخرة مع باقة جانبية من الزهور البيضاء النقية، تعكس الرقيّ والبساطة في آن واحد">
+                <span class="discount">NEW</span>
+                <div class="card_img"><img src="brth/jpg(42).jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>سلة الأمنية بيضاء</h3>
+                    <div class="price">250 د.ل </div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="سلة هدايا لطيفة تجمع بين رقة الزهور الوردية ودمية ناعمة، لتعبر عن الاهتمام والمودة لمن تحب">
+                <span class="discount">-10%</span>
+                <div class="card_img"><img src="brth/jpg(39).jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>سلةالسعادة</h3>
+                    <div class="price">165 د.ل <span>195 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description=" مزيج متناغم بين كعكة شهية وباقة ورد منسقة بعناية، ليجمع لك لذة المذاق وجمال المنظر في هدية واحدة">
+                <span class="discount">-8%</span>
+                <div class="card_img"><img src="brth/jpg(40).jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>سلة عيد الميلاد الزرقاء</h3>
+                    <div class="price">200 د.ل <span>220 د.ل</span></div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- *****************************************-->
+
+        <!--  بدايةالخط الفاصل وقسم التخرج-->
+        <div class="elegant-divider">
+            <div class="line-container">
+                <div class="glowing-line"></div>
+                <div class="title-wrap">
+                    <span class="dot"></span>
+                    <h3 class="delicate-title">فرحة الإنجاز .. هدايا تليق بنجاحكم</h3>
+                    <span class="dot"></span>
+                </div>
+                <div class="glowing-line"></div>
+            </div>
+        </div>
+
+
+        <!--  بدايةالخط الفاصل وقسم التخرج-->
+
+        <div class="card_container" id="grad-section">
+            <div class="card"
+                data-description=" قطعة فنية من الأكريليك الفاخر تحمل عبارة  مبروك التخرج  وقبعة التخرج، هدية تذكارية راقية تدوم طويلاً.">
+
+                <span class="discount">-5%</span>
+                <div class="card_img"><img src="gard/00.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>درع فرحة الإنجاز</h3>
+                    <div class="price">140 د.ل <span>170 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="باقة ورد مميزة مع قبعة تخرج صغيرة و عطر وإطار يحمل سنة التخرج لتخليد ذكرى النجاح.">
+                <span class="discount">-5%</span>
+                <div class="card_img"><img src="gard/22.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>باقة طموح لا ينتهي</h3>
+                    <div class="price">155 د.ل <span>190 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="بوكس يحتوي على ورد أبيض طبيعي مع كيك دائري مخصصة للتخرج، تعبيراً عن الفخر والنجاح">
+                <span class="discount">-5%</span>
+                <div class="card_img"><img src="gard/55.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بوكس بصمة نجاح</h3>
+                    <div class="price">130 د.ل <span>165 د.ل</span></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--------------------------- عيييد الام ---------------------------->
+
+        <!--  بدايةالخط الفاصل وقسم عيد الام -->
+        <div class="elegant-divider">
+            <div class="line-container">
+                <div class="glowing-line"></div>
+                <div class="title-wrap">
+                    <span class="dot"></span>
+                    <h3 class="delicate-title">لأغلى الحبايب .. هدايا تفيض حباً وامتناناً</h3>
+                    <span class="dot"></span>
+                </div>
+                <div class="glowing-line"></div>
+            </div>
+        </div>
+
+        <!--  بدايةالخط الفاصل وقسم عيد الام -->
+
+        <div class="card_container" id="m-day">
+            <div class="card"
+                data-description=" طقم هدايا يحتوي على سجادة صلاة، مصحف مغلف، وعطر، مع لوحة خشبية صغيرة مكتوب عليها عبارة للأم.">
+                <span class="discount">-5%</span>
+                <div class="card_img"><img src="mam/https___www_instagram.jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>بوكس صلاة متكامل</h3>
+                    <div class="price">140 د.ل <span>170 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description=" لوحة جدارية أو مكتبية بإطار ذهبي، تتميز بخط عربي كلاسيكي بعبارة تقديرية للأم">
+                <span class="discount">-5%</span>
+                <div class="card_img"><img src="mam/jpg(33).jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3>برواز إهداء للأم</h3>
+                    <div class="price">95 د.ل <span>120 د.ل</span></div>
+                </div>
+            </div>
+            <div class="card"
+                data-description="فازة تحتوي على تشكيلة زهور ملونة مع لوح أكريليك شفاف في المنتصف مكتوب عليه إهداء للأم.">
+                <span class="discount">-5%</span>
+                <div class="card_img"><img src="mam/jpg(47).jpg">
+                    <div class="icons"><a href="#" class="fa-solid fa-heart"></a><a href="#" class="card_btn">اضافة الى
+                            السلة</a><a href="#" class="fa-solid fa-share"></a></div>
+                </div>
+                <div class="content">
+                    <h3> تنسيق ورد مع عبارة</h3>
+                    <div class="price">130 د.ل <span>165 د.ل</span></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--------------------------------------------->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-img">
+                        <img id="modalImg" src="" alt="flower">
+                    </div>
+                    <div class="modal-info">
+                        <h2 id="modalTitle">اسم الهدية</h2>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span>(4.5 تقييم العملاء)</span>
+                        </div>
+                        <p class="description">وصف الهدية سيظهر هنا...</p>
+                        <div class="modal-price" id="modalPrice"></div>
+                        <button class="add-to-cart">أضف إلى السلة الآن</button>
+                        <br>
+                        <div class="card-writing-area">
+                            <div class="writing-header">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>لمستكِ الخاصة على الهدية (تشمل كتابة، تعديل، أو إضافة).</span>
+                            </div>
+                            <textarea placeholder="اكتبي كلماتكِ هنا ليتم تدوينها بكل حب..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- نهاية بطاقات المنتجات -->
+
+    <!--    بداية اراء الزباين-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <section class="deck-reviews">
+        <h1 class="heading">اراء <span>زبائنا الاعزاء</span></h1>
+
+        <div class="deck-wrapper">
+            <div class="review-card c1">
+                <div class="user-profile"><img src="mam/jpg(36).jpg" alt="رأي"></div>
+                <div class="card-text">
+                    <h3>أروى محمد</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"التنسيق فوق الخيال والتعامل راقي جداً، شكراً ليكم على الإبداع!"</p>
+                </div>
+                <div class="card-footer-icon"><i class="fas fa-heart"></i></div>
+            </div>
+
+            <div class="review-card c2">
+                <div class="user-profile"><img src="mam/jpg(34).jpg" alt="رأي"></div>
+                <div class="card-text">
+                    <h3>ليلى محمود</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"أجمل هدية وصلتني، إتقان وسرعة في التوصيل وتغليف يواجه."</p>
+                </div>
+                <div class="card-footer-icon"><i class="fas fa-heart"></i></div>
+            </div>
+
+            <div class="review-card c3">
+                <div class="user-profile"><img src="mam/jpg(35).jpg" alt="رأي"></div>
+                <div class="card-text">
+                    <h3>سارة علي</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"دقة في المواعيد وريحة العطر تجنن، والدمية شغلها نظيف ومتقن."</p>
+                </div>
+                <div class="card-footer-icon"><i class="fas fa-heart"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!--    نهاية اراء الزباين-->
+
+
+
+    <!---بداية الفوتر -->
+<footer class="main-footer">
+
+    <!-- ===================== محتوى الفوتر: جميع الأعمدة ===================== -->
+    <div class="footer-content">
+
+        <!-- ===== عمود التواصل معنا ===== -->
+        <!-- هنا نضع معلومات الاتصال مثل الهاتف، البريد، العنوان وأيقونات التواصل الاجتماعي -->
+        <div class="footer-column">
+            <h3>تواصل معنا</h3>
+            <p><i class="fas fa-phone"></i> +218 9x xxx xx x0</p>
+            <p><i class="fas fa-envelope"></i> info@yourstore.ly</p>
+            <p><i class="fas fa-map-marker-alt"></i> طرابلس ليبيا 1 2 3 4 5</p>
+            
+            <div class="social-icons">
+                <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- ===== عمود مواقعنا ===== -->
+        <!-- هنا نضع قائمة بالدول أو المواقع التي يتواجد فيها المتجر -->
+        <div class="footer-column">
+            <h3>مواقعنا</h3>
+            <ul>
+                <li><a href="#">ليبيا</a></li>
+                <li><a href="#">تونس</a></li>
+                <li><a href="#">قطر</a></li>
+                <li><a href="#">السعودية</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== عمود الروابط السريعة ===== -->
+        <!-- هنا نضع روابط الصفحات المهمة للمتجر مثل الرئيسية، من نحن، المنتجات، التقييمات، تواصل معنا -->
+        <div class="footer-column">
+            <h3>روابط سريعة</h3>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">من نحن</a></li>
+                <li><a href="#">المنتجات</a></li>
+                <li><a href="#">التقييمات</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+            </ul>
+        </div>    
+
+        <!-- ===== عمود الروابط الإضافية ===== -->
+        <!-- هنا نضع روابط الحساب الشخصي مثل حسابي، طلباتي، المفضلة، الدفع والشحن -->
+        <div class="footer-column">
+            <h3>روابط إضافية</h3>
+            <ul>
+                <li><a href="#">حسابي</a></li>
+                <li><a href="#">طلباتي</a></li>
+                <li><a href="#">المفضلة</a></li>
+                <li><a href="#">الدفع والشحن</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    
+    <!-- ===================== أسفل الفوتر ===================== -->
+    <!-- يحتوي على شعار المتجر وحقوق الطبع واسم المصممين -->
+    <div class="footer-bottom">
+        <div class="footer-logo-container">
+           <div class="logo">
+        <img src="image/logo.png" alt="logo" width="150px">
+      </div>
+        </div>
+        <p class="copyright-text">
+            &copy; 2025 جميع الحقوق محفوظة.
+        </p>
+        <p class="designer-text">
+             Omaima & Libya & Aya  تم التصميم بواسطة:
+        </p>
+    </div>
+</footer>
+    <!---نهاية الفوتر -->
+
+   
+
+
+</body>
+
+</html>

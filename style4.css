@@ -1,0 +1,1538 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;500;700&family=Amiri:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+/* ---بداية الهيدر-- */
+
+
+
+.main-header {
+
+    background-color: #fff;
+
+    /* لون خلفية الهيدر */
+
+    border-bottom: 1px solid #eee;
+
+    /* خط رفيع أسفل الهيدر */
+
+    padding: 10px 0;
+
+    /* مسافة داخلية فوق وتحت */
+     position: fixed;                  /* هذا يخلي الهيدر ثابت */
+    top: 0;                           /* يثبت الهيدر في الأعلى */
+    left: 0;                          /* بداية الهيدر من الجهة اليسرى */
+    width: 100%;                      /* عرض الهيدر كامل الصفحة */
+    z-index: 1000;     
+
+
+
+    position: fixed;
+
+    /* هذا يخلي الهيدر ثابت */
+
+    top: 0;
+
+    /* يثبت الهيدر في الأعلى */
+
+    left: 0;
+
+    /* بداية الهيدر من الجهة اليسرى */
+
+    width: 100%;
+
+    /* عرض الهيدر كامل الصفحة */
+
+    z-index: 1000;
+
+    /* لضمان ظهور الهيدر فوق باقي العناصر */
+
+}
+
+
+
+.header-container {
+
+    max-width: 1200px;
+
+    /* أقصى عرض للحاوية */
+
+    margin: 0 auto;
+
+    /* توسيط الحاوية أفقياً */
+
+    padding: 0 20px;
+
+    /* مسافة داخلية يمين ويسار */
+
+    display: flex;
+
+    /* استخدام Flexbox لترتيب العناصر */
+
+    justify-content: space-between;
+
+    /* توزيع المسافات بين العناصر */
+
+    align-items: center;
+
+    /* محاذاة العناصر عمودياً في الوسط */
+
+}
+
+
+
+.logo {
+
+    font-size: 28px;
+
+    /* حجم الخط للشعار */
+
+    font-weight: 700;
+
+    /* سمك الخط للشعار */
+
+    color: #ff3366;
+
+    /* لون شعار FloSun */
+
+}
+
+
+
+/* إزالة الخطوط الافتراضية من كل الروابط في الهيدر */
+
+.main-nav a,
+.header-icons a {
+
+    text-decoration: none !important;
+
+    /* هذا السطر هو المسؤول عن إزالة الخط السفلي للرابط */
+
+    list-style: none;
+
+}
+
+
+
+.main-nav ul {
+
+    display: flex;
+
+    /* ترتيب عناصر القائمة أفقي */
+
+    list-style: none;
+    /* إزالة النقاط السوداء من القائمة */
+
+    gap: 30px;
+
+    /* المسافة بين الروابط */
+
+    font-size: 16px;
+
+    /* حجم الخط للروابط */
+
+    font-weight: 500;
+
+    /* سمك الخط للروابط */
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+
+.main-nav a {
+
+    position: relative;
+
+    /* لتسهيل وضع تأثيرات hover */
+
+    padding: 10px 0;
+
+    /* مسافة داخلية فوق وتحت */
+
+    color: #333;
+
+    /* لون الرابط الأساسي */
+
+    transition: color 0.3s;
+
+    /* تأثير تدرج اللون عند hover */
+
+    display: inline-block;
+
+}
+
+
+
+.main-nav a:hover,
+
+.main-nav .active {
+
+    color: #ff3366;
+
+    /* لون الرابط عند التفاعل أو النشط */
+
+}
+
+
+
+/* تنسيق القائمة المنسدلة الجديدة */
+
+.dropdown {
+
+    position: relative;
+
+    /* وضع النسخة المنسدلة بالنسبة للعنصر */
+
+    display: inline-block;
+
+    /* يظهر بجانب العناصر الأخرى */
+
+}
+
+
+
+.dropdown-content {
+
+    display: none;
+
+    /* مخفية افتراضياً */
+
+    position: absolute;
+
+    /* لتظهر فوق باقي المحتوى */
+
+    background-color: #fff;
+
+    /* خلفية القائمة المنسدلة */
+
+    min-width: 220px;
+    /* قمت بزيادة العرض ليناسب النص الطويل */
+
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+
+    /* ظل خفيف */
+
+    z-index: 1;
+
+    /* فوق باقي العناصر */
+
+    border-radius: 8px;
+
+    /* حواف مدورة */
+
+    text-align: right;
+
+    /* محاذاة النص لليمين */
+
+    top: 100%;
+
+    /* تبدأ مباشرة تحت الزر */
+
+    padding: 10px 0;
+
+}
+
+
+
+.dropdown-content a {
+
+    color: #333 !important;
+
+    /* لون الروابط داخل القائمة */
+
+    padding: 12px 16px;
+
+    /* المسافة داخلية لكل رابط */
+
+    display: block;
+
+    /* الرابط يأخذ كامل العرض */
+
+    font-size: 14px;
+
+    /* حجم الخط */
+
+    border-bottom: 1px solid #f9f9f9;
+
+    /* خط فاصل بين الروابط */
+
+    text-decoration: none;
+    /* إزالة الخط السفلي داخل القائمة */
+
+}
+
+
+
+.dropdown-content a:last-child {
+
+    border-bottom: none;
+    /* إزالة الخط الفاصل من آخر عنصر */
+
+}
+
+
+
+.dropdown-content a:hover {
+
+    background-color: #fff1f8;
+
+    /* لون الخلفية عند hover */
+
+    color: #F72585 !important;
+
+    /* لون النص عند hover */
+
+}
+
+
+
+.dropdown:hover .dropdown-content {
+
+    display: block;
+
+    /* عرض القائمة عند المرور على الزر */
+
+}
+
+
+
+.dropbtn {
+
+    cursor: pointer;
+
+    /* شكل المؤشر عند المرور */
+
+}
+
+
+
+/* Header Icons (Right side) */
+
+.header-icons {
+
+    display: flex;
+
+    /* ترتيب الأيقونات أفقي */
+
+    align-items: center;
+
+    /* محاذاة الأيقونات عمودياً */
+
+    gap: 20px;
+
+    /* المسافة بين الأيقونات */
+
+    font-size: 20px;
+
+    /* حجم الأيقونات */
+
+}
+
+
+
+.cart-icon {
+
+    position: relative;
+
+    /* لتحديد مكان عداد السلة */
+
+    cursor: pointer;
+
+    /* شكل المؤشر عند المرور */
+
+}
+
+
+
+.cart-count {
+
+    position: absolute;
+
+    /* وضع العداد فوق أيقونة السلة */
+
+    top: -10px;
+
+    /* ارتفاع العداد فوق الأيقونة */
+
+    right: -12px;
+
+    /* مسافة من اليمين */
+
+    background-color: #ff3366;
+
+    /* لون خلفية العداد */
+
+    color: white;
+
+    /* لون النص داخل العداد */
+
+    border-radius: 50%;
+
+    /* شكل دائري */
+
+    padding: 2px 6px;
+
+    /* المسافة الداخلية */
+
+    font-size: 11px;
+
+    /* حجم الخط داخل العداد */
+
+    font-weight: 700;
+
+    /* سمك الخط */
+
+    line-height: 1.4;
+
+    /* ارتفاع السطر */
+
+}
+
+
+
+.icon-cart,
+
+.icon-search,
+
+.icon-menu {
+
+    font-style: normal;
+
+    /* هذه الخاصية تُستخدم لإلغاء أي ميلان في الخط.*/
+
+    text-decoration: none;
+
+}
+
+.back-home-btn {
+    background: linear-gradient(45deg, #F72585, #ff8fa3); /* ألوان متدرجة ملفتة */
+    color: #fff !important;
+    padding: 6px 14px !important;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    animation: simple-pulse 2s infinite; /* حركة نبض تلقائية */
+    box-shadow: 0 4px 10px rgba(247, 37, 133, 0.3);
+}
+
+@keyframes simple-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; } /* يكبر ويصغر تلقائياً */
+}
+
+.back-home-btn:hover {
+    filter: brightness(1.1); /* تفتيح بسيط عند الوقوف عليه */
+    transform: translateY(-2px);
+}
+
+/* نهاية الهيدر*/
+/* بداية  زر الملاحظات*/
+.feedback-button {
+    position: fixed;
+    left: 20px;
+    bottom: 40px;
+    background-color: #ff8fab;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* نافذة الملاحظات */
+.feedback-widget {
+    position: fixed;
+    left: 20px;
+    bottom: 110px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* إظهار النموذج عند تحديد checkbox */
+#feedback-toggle:checked~.feedback-widget {
+    display: flex;
+}
+
+/* الرأس */
+.feedback-header {
+    background-color: #ff8fab;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback-close {
+    cursor: pointer;
+}
+
+/* الجسم */
+.feedback-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-body textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.feedback-body button {
+    padding: 0.5rem;
+    background-color: #ff8fab;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback-body button:hover {
+    background-color: #fb6f92;
+}
+
+.feedback-button:hover {
+    transform: scale(1.2) rotate(-5deg);
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+/* نهاية زر الملاحظات*/
+
+/*بداية فيديو البداية*/
+
+.gift-intro-section {
+    padding: 120px 10% 80px 10%;
+    /* زيادة المسافة العلوية 120px ليكون بعيداً عن الهيدر */
+    background: #fff;
+    direction: rtl;
+    position: relative;
+    overflow: hidden;
+}
+
+/* التدرج اللوني الهادئ في الخلفية */
+.bg-gradient-soft {
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(251, 111, 146, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+/* جانب الفيديو */
+.video-wrapper {
+    position: relative;
+}
+
+.video-inner {
+    position: relative;
+    border-radius: 40px 160px 40px 40px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(251, 111, 146, 0.15);
+    transform: rotate(-1.5deg);
+    border: 8px solid #fff;
+    /* إطار أبيض يبرز الفيديو */
+}
+
+.creative-video {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.shape-back {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(251, 111, 146, 0.3);
+    border-radius: 40px 160px 40px 40px;
+    z-index: -1;
+}
+
+/* جانب الكلام مع لمسة جمالية */
+.text-wrapper {
+    position: relative;
+    font-family: "Tajawal", sans-serif;
+}
+
+/* تأثير "الزجاج" الخفيف خلف النص ليعطيه عمق وألوان */
+.glass-effect {
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(255, 245, 247, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    border-right: 4px solid#fb6f92;
+    /* خط عمودي بجانب النص يعطي فخامة */
+    border-radius: 0 20px 20px 0;
+}
+
+.text-wrapper .label {
+    color: #fb6f92;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Tajawal", sans-serif;
+}
+
+.text-wrapper h2 {
+    font-size: 3.8rem;
+    color: #222;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.accent-text {
+    color: #fb6f92;
+    position: relative;
+}
+
+.text-wrapper p {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 35px;
+    max-width: 90%;
+}
+
+.explore-link {
+    text-decoration: none;
+    color: #222;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    background: rgba(251, 111, 146, 0.05);
+    border-radius: 50px;
+    transition: 0.4s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.explore-link i {
+    transition: 0.3s;
+}
+
+.explore-link:hover {
+    background: #fb6f92;
+    color: #fff;
+}
+
+.explore-link:hover i {
+    transform: translateX(10px);
+}
+
+/* --- ريسبونسف احترافي --- */
+@media (max-width: 991px) {
+    .gift-intro-section {
+        padding-top: 100px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .video-inner {
+        transform: rotate(0);
+        border-radius: 30px;
+    }
+
+    .creative-video {
+        height: 350px;
+    }
+
+    .text-wrapper h2 {
+        font-size: 2.8rem;
+    }
+
+    .glass-effect {
+        border-right: none;
+        border-top: 4px solid #fb6f92;
+        text-align: center;
+    }
+}
+
+/*نهاية فيديو البداية*/
+/*بداية شريط الفاصل وقسم العطور*/
+
+
+.elegant-divider {
+    padding: 50px 0 30px 0;
+    text-align: center;
+    direction: rtl;
+     font-family: "Tajawal", sans-serif;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 600px;
+    /* ليظل الشريط مجموعاً وغير ضخم */
+    margin: 0 auto;
+}
+
+/* الخط الرقيق المتحرك */
+.glowing-line {
+    flex: 1;
+    height: 1.5px;
+    /* نحيف جداً */
+    background: #eee;
+    /* لون هادئ أساسي */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* اللمعة المتحركة (اللقطة اللي مش صامتة) */
+.glowing-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #fb6f92, transparent);
+    animation: flowLine 3s infinite linear;
+}
+
+/* النقاط الجمالية بجانب النص */
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: #fb6f92;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fb6f92;
+    /* توهج بسيط */
+    animation: pulseDot 2s infinite;
+}
+
+.delicate-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+/* أنيميشن مرور اللمعة على الخط */
+@keyframes flowLine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* أنيميشن نبض النقاط */
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+/* ريسبونسف للموبايل */
+@media (max-width: 768px) {
+    .line-container {
+        width: 90%;
+        gap: 10px;
+    }
+
+    .delicate-title {
+        font-size: 1.1rem;
+    }
+}
+
+
+/*نهاية شريط الفاصل وقسم العطور*/
+
+
+
+/* --- بداية بطاقات المنتجات (تعديل 3 كروت مع استرجاع الأيقونات) --- */
+
+.products .card_container {
+    display: grid;
+    /* السطر المسؤول عن جعلهم 3 كروت بجانب بعض في الشاشات الكبيرة */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+/* الكارت الفردي */
+.products .card_container .card {
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.6rem;
+    border: 0.08rem solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s linear;
+}
+
+/* علامة الخصم */
+.products .card_container .card .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #fb6f92;
+    color: #fff;
+    padding: 0.5rem 1rem 0.5rem 1.4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
+    z-index: 10;
+}
+
+/* حاوية الصورة */
+.products .card_container .card .card_img {
+    position: relative;
+    text-align: center;
+    padding-top: 1.5rem;
+    overflow: hidden;
+    height: 300px;
+    /* ارتفاع موحد للصور */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products .card_container .card .card_img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* لمنع تمدد الصورة */
+    transition: 0.3s linear;
+}
+
+.products .card_container .card:hover .card_img img {
+    transform: scale(1.1);
+}
+
+/* --- الشريط الوردي والأيقونات (الذي تم حذفه بالخطأ) --- */
+.products .card_container .card .card_img .icons {
+    position: absolute;
+    bottom: -7rem;
+    /* مخفي تحت */
+    left: 0;
+    right: 0;
+    display: flex;
+    transition: 0.3s linear;
+}
+
+.products .card_container .card:hover .card_img .icons {
+    bottom: 0;
+    /* يظهر عند التمرير */
+}
+
+.products .card_container .card .card_img .icons a {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 1.4rem;
+    background-color: #fb6f92;
+    color: #fff;
+    flex: 1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* زر "إضافة إلى السلة" الوردي العريض */
+.products .card_container .card .card_img .icons .card_btn {
+    border-left: 0.1rem solid #fff7;
+    border-right: 0.1rem solid #fff7;
+    flex: 2;
+    /* يأخذ مساحة أكبر */
+    font-size: 1rem;
+}
+
+.products .card_container .card .card_img .icons a:hover {
+    background-color: #333;
+}
+
+/* محتوى النص */
+.products .card_container .card .content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.products .card_container .card .content h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.products .card_container .card .content .price {
+    font-size: 1.4rem;
+    color: #fb6f92;
+    font-weight: bolder;
+}
+
+.products .card_container .card .content .price span {
+    font-size: 1.1rem;
+    color: #999;
+    font-weight: lighter;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+/* --- ريسبونسف (Responsive) لضمان العمل على كل الأجهزة --- */
+@media (max-width: 1024px) {
+    .products .card_container {
+        grid-template-columns: repeat(2, 1fr);
+        /* كارتين في الشاشات المتوسطة */
+    }
+}
+
+@media (max-width: 700px) {
+    .products .card_container {
+        grid-template-columns: 1fr;
+        /* كارت واحد في الموبايل */
+    }
+}
+
+/* --- نهاية بطاقات المنتجات --- */
+
+/*  لما نضغط على وحدة من البطاقات*/
+/* Modal Background */
+.modal {
+    display: none;
+    /* مخفي افتراضياً */
+    position: fixed;
+    /* يثبت في مكانه عند التمرير */
+    z-index: 2000;
+    /* فوق باقي العناصر */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* خلفية معتمة */
+    backdrop-filter: blur(5px);
+    /* تأثير ضبابي للخلفية */
+    align-items: center;
+    /* محاذاة رأسية */
+    justify-content: center;
+    /* محاذاة أفقية */
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    position: relative;
+    padding: 2rem;
+    animation: fadeIn 0.4s ease;
+    /* تأثير ظهور تدريجي */
+    direction: rtl;
+    /* اتجاه النص عربي */
+}
+
+/* تأثير fade in */
+@keyframes fadeIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #fb6f92;
+}
+
+/* لون عند المرور بالماوس */
+
+/* Modal Body Layout */
+.modal-body {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* السماح للعنصر بالانتقال لسطر جديد عند صغر الشاشة */
+    align-items: center;
+}
+
+/* صورة المودال */
+.modal-img {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.modal-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* معلومات المودال */
+.modal-info {
+    flex: 1.5;
+    min-width: 250px;
+}
+
+.modal-info h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* نجوم التقييم */
+.stars {
+    color: #ffb703;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.stars span {
+    color: #777;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+/* وصف المنتج */
+.description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* سعر المنتج */
+.modal-price {
+    font-size: 1.8rem;
+    color: #fb6f92;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* زر الإضافة إلى السلة */
+.add-to-cart {
+    background-color: #fb6f92;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #333;
+}
+
+/*  رسيبونسف لما نضغط على البطاقة في الهواتف  */
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: R;
+        /* ترتيب عمودي على الشاشات الصغيرة */
+        text-align: center;
+    }
+}
+
+/*  نهاية لما نضغط على وحدة من البطاقات*/
+/* بداية العبارة التي بداخل ضغط على البطاقة     */
+.card-writing-area {
+    margin: 15px 10px;
+    background: #fffafb;
+    /* لون كريمي وردي خفيف جداً */
+    border: 1px dashed #fb6f92;
+    /* إطار منقط يوحي بالقص والكتابة */
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.writing-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fb6f92;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-writing-area textarea {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* إضافة أسطر وهمية كأنها ورقة رسائل */
+    background-image: linear-gradient(#eee 1px, transparent 1px);
+    background-size: 100% 1.6em;
+}
+
+.card-writing-area:focus-within {
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(251, 111, 146, 0.1);
+    border-style: solid;
+    /* يتحول لخط صلب عند الكتابة */
+}
+
+/* بداية العبارة التي بداخل ضغط على البطاقة     */
+.card-writing-area {
+    margin: 15px 10px;
+    background: #fffafb;
+    /* لون كريمي وردي خفيف جداً */
+    border: 1px dashed #fb6f92;
+    /* إطار منقط يوحي بالقص والكتابة */
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.writing-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fb6f92;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-writing-area textarea {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* إضافة أسطر وهمية كأنها ورقة رسائل */
+    background-image: linear-gradient(#eee 1px, transparent 1px);
+    background-size: 100% 1.6em;
+}
+
+.card-writing-area:focus-within {
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(251, 111, 146, 0.1);
+    border-style: solid;
+    /* يتحول لخط صلب عند الكتابة */
+}
+
+/* نهاية العبارة التي بداخل ضغط على البطاقة     */
+/**********************/
+/*بداية الرفيو */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+.deck-reviews {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #fff, #fff9fb);
+    text-align: center;
+    direction: rtl;
+    overflow: hidden;
+    font-family: 'Cairo', sans-serif;
+}
+
+.deck-wrapper {
+    position: relative;
+    height: 480px;
+    /* طول مناسب للديسك توب */
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-card {
+    position: absolute;
+    width: 260px;
+    height: 380px;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(251, 111, 146, 0.12);
+    border: 1px solid rgba(251, 111, 146, 0.08);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* شريط التزيين العلوي */
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #ff8fa3, #ffb3c1);
+    border-radius: 30px 30px 0 0;
+}
+
+/* توزيع الكروت في الديسك توب */
+.c1 {
+    transform: rotate(-8deg);
+    z-index: 3;
+}
+
+.c2 {
+    transform: rotate(0deg);
+    z-index: 2;
+}
+
+.c3 {
+    transform: rotate(8deg);
+    z-index: 1;
+}
+
+/* تأثير الانفتاح عند الـ Hover */
+@media (min-width: 992px) {
+    .deck-wrapper:hover .c1 {
+        transform: rotate(-5deg) translateX(280px);
+    }
+
+    .deck-wrapper:hover .c2 {
+        transform: translateY(-30px);
+    }
+
+    .deck-wrapper:hover .c3 {
+        transform: rotate(5deg) translateX(-280px);
+    }
+}
+
+/* تنسيق العناصر داخل الكارت */
+.user-profile {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+.user-profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff8fa3;
+    padding: 3px;
+    box-shadow: 0 5px 15px rgba(251, 111, 146, 0.15);
+}
+
+.stars {
+    color: #ffb703;
+    font-size: 0.8rem;
+    margin: 10px 0;
+}
+
+.card-text h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.card-text p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-footer-icon {
+    color: #ffb3c1;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+/* --- الجزء الخاص بالـ Responsive (الموبايل) --- */
+@media (max-width: 991px) {
+    .deck-wrapper {
+        height: auto;
+        /* إلغاء الارتفاع الثابت */
+        flex-direction: column;
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    .review-card {
+        position: relative;
+        /* فك التكدس */
+        transform: rotate(0) !important;
+        /* إلغاء الميلان */
+        width: 100%;
+        max-width: 320px;
+        /* حجم مريح للموبايل */
+        height: auto;
+        margin: 0 auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        /* شادو أخف للموبايل */
+    }
+
+    /* إلغاء تأثيرات الـ Hover التي قد تسبب خروج الكروت عن الشاشة */
+    .deck-wrapper:hover .c1,
+    .deck-wrapper:hover .c2,
+    .deck-wrapper:hover .c3 {
+        transform: none !important;
+    }
+}
+
+
+/*نهاية الرفيو*/
+
+
+
+
+
+
+/* --- بداية الفوتر المتطور --- */
+/* 11. تذييل الصفحة (FOOTER) */
+/* ==================================== */
+
+.main-footer {
+    background-color: #ffe5ec; 
+    color: #0a0000; 
+    padding: 50px 0 20px; 
+    border-radius: 10px;
+    background-image: url(vovo.jpg); /* ممكن تحذفها لو ما فيها تأثير */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; 
+    text-align: right;
+    gap: 20px; 
+}
+
+.footer-column {
+    flex: 1 1 22%; 
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #F72585; 
+    border-bottom: 2px solid #dca3bd;
+    padding-bottom: 5px;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.footer-column p, .footer-column a {
+    color: #0b0101;
+    font-size: 20px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-column p {
+    text-align: right; 
+}
+
+.footer-column i {
+    margin-left: 10px;
+}
+
+.footer-column a:hover {
+    color: #F72585;
+    background-color: #ffe0f0; 
+    padding: 3px 6px; 
+    border-radius:10px;
+    box-shadow: 0 0 20px rgba(225, 120, 195, 0.2); 
+    transform: translateX(-3px); 
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: flex-end; 
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.social-icons a:hover {
+    color: #333;
+    background-color: #F72585;
+    border-color: #F72585;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 15px 20px 0;
+    border-top: 1px solid #555;
+    text-align: center;
+    font-size: 14px;
+    color: #070202;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-container {
+    margin-bottom: 15px;
+}
+
+.designer-text {
+    margin-top: 10px;
+    color: #2c0214; 
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/* ==================================== */
+/* تحسينات التجاوب (Responsiveness) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* تحويل الأعمدة لتصبح فوق بعضها */
+        text-align: center;    /* جعل النص في المنتصف للموبايل */
+        gap: 30px;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;       /* كل عمود يأخذ العرض كاملاً */
+        align-items: center;  /* محاذاة العناصر في المنتصف */
+    }
+
+    .footer-column h3 {
+        align-self: center;   /* محاذاة العناوين في المنتصف */
+        margin-bottom: 15px;
+    }
+
+    .footer-column p, .footer-column a {
+        text-align: center;   /* محاذاة الفقرات والروابط في المنتصف */
+    }
+
+    .footer-column ul {
+        align-items: center;  /* محاذاة القوائم في المنتصف */
+    }
+
+    .social-icons {
+        justify-content: center; /* محاذاة أيقونات التواصل في المنتصف */
+    }
+
+    .footer-column i {
+        margin-left: 0;
+        margin-right: 5px; /* تعديل مسافة الأيقونة عند التوسط */
+    }
+
+    .footer-column a:hover {
+        transform: translateY(-3px); /* تغيير اتجاه الحركة للأعلى بدلاً من اليمين */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-footer {
+        padding: 30px 0 15px; /* تقليل الهوامش في الشاشات الصغيرة جداً */
+    }
+    
+    .footer-column h3 {
+        font-size: 20px; /* تصغير حجم العنوان قليلاً */
+    }
+}
+
+/* --- نهاية الفوتر --- */

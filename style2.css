@@ -1,0 +1,1125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap'); /* استيراد خط Cairo */
+
+* {
+    box-sizing: border-box;   /* حساب الحجم مع الـ padding والـ border */
+    margin: 0;                /* إزالة الهوامش الافتراضية */
+    padding: 0;               /* إزالة المسافات الداخلية */
+    font-family: 'Roboto', sans-serif; /* الخط الافتراضي للموقع */
+}
+
+body {
+    background-color: #ffffff; /* لون خلفية الصفحة */
+    color: #333;               /* لون النص */
+    padding-top: 80px;         /* مسافة علوية بسبب الهيدر الثابت */
+    overflow-x: hidden;        /* منع التمرير الأفقي */
+}
+
+
+a {
+    text-decoration: none; /* إزالة الخط السفلي من الروابط */
+}
+
+ul {
+    list-style: none;      /* إزالة النقط أو الأرقام من القوائم */
+}
+
+/* ---بداية الهيدر-- */
+.main-header {
+    background-color: #fff;           /* لون خلفية الهيدر */
+    border-bottom: 1px solid #eee;    /* خط رفيع أسفل الهيدر */
+    padding: 10px 0;                  /* مسافة داخلية فوق وتحت */
+
+    position: fixed;                  /* هذا يخلي الهيدر ثابت */
+    top: 0;                           /* يثبت الهيدر في الأعلى */
+    left: 0;                          /* بداية الهيدر من الجهة اليسرى */
+    width: 100%;                      /* عرض الهيدر كامل الصفحة */
+    z-index: 1000;                    /* لضمان ظهور الهيدر فوق باقي العناصر */
+}
+
+.header-container {
+    max-width: 1200px;                /* أقصى عرض للحاوية */
+    margin: 0 auto;                   /* توسيط الحاوية أفقياً */
+    padding: 0 20px;                  /* مسافة داخلية يمين ويسار */
+    display: flex;                     /* استخدام Flexbox لترتيب العناصر */
+    justify-content: space-between;   /* توزيع المسافات بين العناصر */
+    align-items: center;              /* محاذاة العناصر عمودياً في الوسط */
+}
+
+
+.logo {
+    font-size: 28px;                  /* حجم الخط للشعار */
+    font-weight: 700;                  /* سمك الخط للشعار */
+    color: #ff3366;                    /* لون شعار FloSun */
+}
+
+.main-nav ul {
+    display: flex;                     /* ترتيب عناصر القائمة أفقي */
+    gap: 30px;                         /* المسافة بين الروابط */
+    font-size: 16px;                   /* حجم الخط للروابط */
+    font-weight: 500;                  /* سمك الخط للروابط */
+}
+
+.main-nav a {
+    position: relative;                /* لتسهيل وضع تأثيرات hover */
+    padding: 10px 0;                   /* مسافة داخلية فوق وتحت */
+    color: #333;                        /* لون الرابط الأساسي */
+    transition: color 0.3s;            /* تأثير تدرج اللون عند hover */
+}
+
+.main-nav a:hover,
+.main-nav .active {
+    color: #ff3366;                    /* لون الرابط عند التفاعل أو النشط */
+}
+
+.arrow {
+    font-size: 10px;                   /* حجم سهم القائمة المنسدلة */
+    margin-right: 5px;                 /* مسافة صغيرة بين السهم والنص */
+}
+
+/* تنسيق القائمة المنسدلة الجديدة */
+.dropdown {
+    position: relative;                /* وضع النسخة المنسدلة بالنسبة للعنصر */
+    display: inline-block;             /* يظهر بجانب العناصر الأخرى */
+}
+
+.dropdown-content {
+    display: none;                      /* مخفية افتراضياً */
+    position: absolute;                 /* لتظهر فوق باقي المحتوى */
+    background-color: #fff;             /* خلفية القائمة المنسدلة */
+    min-width: 160px;                   /* الحد الأدنى لعرض القائمة */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* ظل خفيف */
+    z-index: 1;                          /* فوق باقي العناصر */
+    border-radius: 8px;                  /* حواف مدورة */
+    text-align: right;                   /* محاذاة النص لليمين */
+    top: 100%;                           /* تبدأ مباشرة تحت الزر */
+}
+
+.dropdown-content a {
+    color: #333 !important;             /* لون الروابط داخل القائمة */
+    padding: 12px 16px;                 /* المسافة داخلية لكل رابط */
+    display: block;                      /* الرابط يأخذ كامل العرض */
+    font-size: 14px;                     /* حجم الخط */
+    border-bottom: 1px solid #f9f9f9;   /* خط فاصل بين الروابط */
+}
+
+.dropdown-content a:hover {
+    background-color: #fff1f8;           /* لون الخلفية عند hover */
+    color: #F72585 !important;           /* لون النص عند hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;                      /* عرض القائمة عند المرور على الزر */
+}
+
+.dropbtn {
+    cursor: pointer;                     /* شكل المؤشر عند المرور */
+}
+
+/* Header Icons (Right side) */
+.header-icons {
+    display: flex;                       /* ترتيب الأيقونات أفقي */
+    align-items: center;                 /* محاذاة الأيقونات عمودياً */
+    gap: 20px;                           /* المسافة بين الأيقونات */
+    font-size: 20px;                     /* حجم الأيقونات */
+}
+
+.cart-icon {
+    position: relative;                  /* لتحديد مكان عداد السلة */
+    cursor: pointer;                     /* شكل المؤشر عند المرور */
+}
+
+.cart-count {
+    position: absolute;                  /* وضع العداد فوق أيقونة السلة */
+    top: -10px;                          /* ارتفاع العداد فوق الأيقونة */
+    right: -10px;                        /* مسافة من اليمين */
+    background-color: #ff3366;           /* لون خلفية العداد */
+    color: white;                         /* لون النص داخل العداد */
+    border-radius: 50%;                  /* شكل دائري */
+    padding: 2px 6px;                    /* المسافة الداخلية */
+    font-size: 12px;                     /* حجم الخط داخل العداد */
+    font-weight: 700;                    /* سمك الخط */
+    line-height: 1;                      /* ارتفاع السطر */
+}
+
+.menu-toggle {
+    cursor: pointer;                     /* شكل المؤشر عند المرور */
+}
+
+.icon-cart, .icon-search, .icon-menu {
+    font-style: normal;                  /* هذه الخاصية تُستخدم لإلغاء أي ميلان في الخط.*/
+}
+/* نهاية الهيدر*/
+/* الفيديو والنص*/
+.breadcrumbs-area {
+    height: 500px;                    /* ارتفاع المنطقة */
+    display: flex;                     /* ترتيب المحتوى أفقي */
+    align-items: center;               /* محاذاة العناصر عمودياً في الوسط */
+    justify-content: center;           /* محاذاة العناصر أفقياً في الوسط */
+    padding: 0 0;                      /* إزالة البادينغ الأفقي والعمودي */
+    direction: rtl;                    /* اتجاه الكتابة من اليمين للعربي */
+}
+
+/* حاوية الفيديو + النص */
+.breadcrumb-content {
+    display: flex;                     /* ترتيب الفيديو والنص أفقي */
+    width: 100%;                       /* عرض كامل */
+    max-width: 1200px;                 /* الحد الأقصى للعرض */
+    align-items: center;               /* محاذاة العناصر عمودياً */
+    justify-content: space-between;    /* توزيع المسافات بين الفيديو والنص */
+    position: relative;                /* لتمكين تعديل الموضع */
+    left: 200px;                        /* إزاحة الحاوية إلى اليمين */
+}
+/* الفيديو */
+.breadcrumb-video video {
+    width: 550px;                       /* عرض الفيديو */
+    height: 450px;                      /* ارتفاع الفيديو */
+    object-fit: cover;                  /* تغطية كاملة دون تشويه */
+    border-radius: 12px;                /* حواف مدورة */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* ظل خفيف حول الفيديو */
+}
+.breadcrumb-text {
+    margin-right: 80px;                 /* مسافة بين النص والفيديو */
+}
+.breadcrumb-text .title-details {
+    font-size: 2rem;                    /* حجم العنوان */
+    color: #F72585;                     /* لون العنوان */
+    margin-bottom: 1rem;                /* مسافة تحت العنوان */
+    font-weight: 700;                   /* سمك الخط */
+    font-family: "Tajawal", sans-serif; /* الخط المستخدم */
+}
+.breadcrumb-text p {
+    font-family: "Tajawal", sans-serif; /* الخط المستخدم للنصوص */
+    font-size: 1.15rem;                 /* حجم النص */
+    color: #444;                        /* لون النص */
+    line-height: 1.9;                   /* ارتفاع السطر */
+    margin-bottom: 1.4rem;              /* مسافة تحت الفقرة */
+}
+/* 1. التنسيق الأصلي للزر */
+.breadcrumb-text .cta-text {
+    display: inline-block;              /* لتمكين padding وخطأ العرض */
+    padding: 0.6rem 1.2rem;             /* المسافة الداخلية للزر */
+    background-color: #F72585;          /* اللون الافتراضي للزر */
+    color: #fff;                         /* لون النص داخل الزر */
+    border-radius: 10px;                 /* حواف مدورة */
+    text-decoration: none;               /* إزالة الخط السفلي */
+    transition: all 0.3s ease;           /* تأثير الحركة */
+    position: relative;                  /* لتحديد طبقات الزر */
+    z-index: 10;                         /* لضمان ظهور الزر فوق أي عناصر أخرى */
+}
+/* 2. تأثير الـ Hover */
+.breadcrumb-text .cta-text:hover {
+    background-color: #e60086 !important;            /* تغيير اللون عند المرور */
+    transform: translateY(-5px) !important;          /* رفع الزر قليلاً */
+    box-shadow: 0 10px 20px rgba(15, 15, 15, 0.46) !important; /* ظل عند المرور */
+    cursor: pointer;                                 /* شكل المؤشر عند المرور */
+}
+/*نهاية الفيديو والنص*/
+/* جزئية responsive للهيدر وحاوية الفيديو والنص */
+/* 1. للشاشات الصغيرة والمتوسطة (Max width 991px) */
+@media (max-width: 991px) {
+
+    /* الحاوية الرئيسية للهيدر */
+    .header-container {
+        padding: 10px 15px !important;            /* بادينغ داخلي للهيدر */
+        justify-content: space-between !important; /* توزيع المسافة بين الشعار والقائمة والأيقونات */
+    }
+
+    /* أيقونات الهيدر على اليمين */
+    .header-icons {
+        margin-right: 45px !important;           /* مسافة عن الحافة اليمنى */
+        gap: 12px !important;                    /* المسافة بين الأيقونات */
+    }
+
+    /* القائمة الرئيسية تظهر بشكل عمودي */
+    .main-nav {
+        display: flex !important;                /* عرض flex للقائمة */
+        flex-direction: column;                  /* ترتيب عمودي للروابط */
+        gap: 15px;                               /* المسافة بين الروابط */
+        position: absolute;                      /* تموضع فوق الصفحة */
+        top: 70px;                               /* المسافة من أعلى الهيدر */
+        right: 20px;                             /* المسافة من الحافة اليمنى */
+        background-color: #fff;                  /* خلفية بيضاء */
+        padding: 15px;                            /* بادينغ داخلي للقائمة */
+        border-radius: 10px;                     /* حواف دائرية */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ظل للقائمة */
+        z-index: 1001;                           /* ظهور فوق العناصر الأخرى */
+    }
+
+    .main-nav a {
+        padding: 10px 0 !important;             /* بادينغ عمودي للروابط */
+        font-size: 16px !important;             /* حجم الخط */
+        text-align: right !important;           /* محاذاة النص لليمين */
+    }
+
+    /* أيقونة Menu (الخطوط) */
+    .menu-icon {
+        cursor: pointer;                         /* شكل المؤشر عند المرور */
+        z-index: 2005 !important;               /* فوق باقي العناصر */
+    }
+
+    /* Breadcrumbs responsive */
+    .breadcrumbs-area {
+        height: auto !important;                /* ارتفاع تلقائي حسب المحتوى */
+        padding: 110px 20px 40px !important;   /* بادينغ علوي وجانبي وسفلي */
+    }
+
+    .breadcrumb-content {
+        flex-direction: column !important;     /* ترتيب النص والفيديو عمودي */
+        left: 0 !important;                    /* ضبط موضع الحاوية */
+        position: static !important;           /* إزالة أي تموضع مطلق */
+        width: 100% !important;                /* عرض كامل */
+        gap: 40px !important;                  /* المسافة بين النص والفيديو */
+    }
+
+    .breadcrumb-text {
+        width: 100% !important;                /* عرض كامل للنص */
+        text-align: center !important;         /* محاذاة النص للوسط */
+        margin: 0 !important;                  /* إزالة أي مسافات خارجية */
+    }
+
+    .breadcrumb-text p {
+        font-size: 1.1rem !important;          /* حجم الخط للنص */
+        line-height: 1.7 !important;           /* ارتفاع السطر */
+        white-space: normal !important;        /* السماح بكسر السطر */
+    }
+
+    .breadcrumb-video {
+        width: 100% !important;                /* عرض كامل للحاوية */
+        display: flex !important;              
+        justify-content: center !important;    /* توسيط الفيديو أفقيًا */
+    }
+
+    .breadcrumb-video video {
+        width: 100% !important;                /* عرض الفيديو كامل الحاوية */
+        max-width: 380px !important;           /* أقصى عرض للفيديو */
+        height: auto !important;               /* ارتفاع تلقائي للحفاظ على النسبة */
+        border-radius: 15px !important;       /* حواف دائرية */
+    }
+}
+
+/* 2. للشاشات المتوسطة (Tablets: 992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .header-container {
+        display: flex !important;                
+        justify-content: space-between !important; /* الشعار على اليسار، الأيقونات على اليمين */
+        align-items: center !important;          
+        padding: 10px 30px !important;            /* بادينغ داخلي للهيدر */
+        position: relative;                       
+    }
+
+    .main-nav {display: flex !important;                 
+        flex-direction: row;                       /* ترتيب الروابط أفقي */
+        justify-content: center !important;       /* توسيط الروابط */
+        align-items: center;                       
+        gap: 30px;                                 /* المسافة بين الروابط */
+        background-color: #fff !important;        /* خلفية بيضاء للقائمة */
+        padding: 10px 20px !important;            /* بادينغ داخلي */
+        border-radius: 10px;                       
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);   /* ظل للقائمة */
+        position: relative;                        
+        width: auto;                               
+    }
+
+    .main-nav a {
+        padding: 10px 15px !important;            /* بادينغ داخلي للروابط */
+        font-size: 16px !important;               
+        text-align: center !important;            
+        white-space: nowrap;                       /* منع كسر النص */
+        color: #333;                               
+    }
+
+    /* أيقونات الهيدر */
+    .header-icons {
+        display: flex !important;                 
+        gap: 20px !important;                      /* المسافة بين الأيقونات */
+        align-items: center;    
+        margin-left: 20px;
+        margin-right: 20px;                   
+    } 
+
+    /* Breadcrumbs */
+    .breadcrumbs-area {
+        height: 450px !important;                  /* ارتفاع ثابت */
+        padding: 80px 30px 30px !important;       /* بادينغ علوي وجانبي وسفلي */
+    }
+
+   .breadcrumb-content {
+    flex-direction: row !important;           /* ترتيب العناصر أفقي: النص على اليمين والفيديو على اليسار */
+    justify-content: space-between !important; /* توزيع المسافة بين النص والفيديو بالتساوي */
+    gap: 30px !important;                      /* المسافة بين النص والفيديو */
+    width: 100% !important;                    /* عرض كامل للحاوية */
+}
+
+.breadcrumb-text {
+    width: 50% !important;                     /* النص يشغل نصف مساحة الحاوية */
+    text-align: right !important;              /* محاذاة النص لليمين (للعربية) */
+    margin: 0 !important;                      /* إزالة أي مسافات خارجية */
+}
+
+.breadcrumb-video {
+    width: 50% !important;                     /* الفيديو يشغل نصف مساحة الحاوية */
+    display: flex !important;                  /* استخدام Flexbox لترتيب محتوى الفيديو */
+    justify-content: center !important;        /* توسيط الفيديو أفقيًا داخل الحاوية */
+}
+
+.breadcrumb-video video {
+    width: 100% !important;                    /* عرض الفيديو كامل الحاوية */
+    max-width: 500px !important;               /* أقصى عرض للفيديو */
+    height: auto !important;                   /* ارتفاع تلقائي للحفاظ على نسبة الأبعاد */
+    border-radius: 12px !important;           /* حواف دائرية للفيديو */
+}
+}
+
+/*  جزئية responsive للهيدر وحاوية الفيديو والنص  */
+/* النص يلي فوق البطاقات*/
+
+.heading span {
+    color: #fb6f92;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+.content{
+    direction: rtl;
+}
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: rgba(255, 51, 184, 0.05);
+}
+
+/*النص يلي فوق البطاقات*/
+/* بداية يطاقات المنتجات */
+
+/* الحاوية التي تحتوي على كل الكروت */
+.products .card_container {
+    display: flex;
+    flex-wrap: wrap;          /* السماح للكروت بالانتقال للسطر التالي عند الحاجة */
+    gap: 1.5rem;              /* المسافة بين الكروت */
+    max-width: 1200px;        /* الحد الأقصى لعرض الحاوية */
+    margin: 0 auto;           /* توسيط الحاوية */
+    justify-content: center;  /* محاذاة الكروت في الوسط */
+}
+
+/* كل كارد فردي داخل الحاوية */
+.products .card_container .card {
+    flex: 1 1 calc(33.333% - 1rem);  /* حجم الكارد بالنسبة للحاوية */
+    max-width: calc(33.333% - 1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); /* الظل لإعطاء عمق */
+    border-radius: 0.6rem;           /* حواف مستديرة */
+    border: 0.08rem solid rgba(0,0,0,0.1); /* حدود رقيقة */
+    position: relative;              /* مهم لوضع العناصر المطلقة داخله */
+}
+
+/* علامة الخصم على الكارد */
+.products .card_container .card .discount {
+    position: absolute;
+    background-color: #fb6f92;      /* لون الخلفية للخصم */
+    color: #fff;                     /* لون النص */
+    padding: 0.5rem 1rem 0.5rem 1.4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 50%); /* شكل السهم */
+    z-index: 100;                    /* التأكد من ظهوره فوق العناصر الأخرى */
+}
+
+/* صورة الكارد */
+.products .card_container .card .card_img {
+    position: relative;              /* مهم لوضع الأيقونات */
+    text-align: center;
+    padding-top: 1.5rem;             /* المسافة العلوية */
+    overflow: hidden;                /* لمنع الصور من الخروج */
+}
+
+.products .card_container .card .card_img img {
+    height: 14rem;                   /* ارتفاع الصورة */
+    max-width: 100%; 
+}
+
+/* تأثير التكبير عند المرور على الكارد */
+.products .card_container .card:hover .card_img img {
+    transform: scale(1.1);
+}
+
+/* ⚠️ قسم الأيقونات داخل الصورة لضمان عدم التداخل */
+.products .card_container .card .card_img .icons {
+    position: absolute;
+    bottom: -7rem;                   /* إخفاء الأيقونات أسفل الكارد */
+    left: 0;
+    right: 0;
+    display: flex; 
+}
+
+/* ظهور الأيقونات عند المرور على الكارد */
+.products .card_container .card:hover .card_img .icons {
+    bottom: 0;
+}
+
+/* تصميم كل أيقونة */
+.products .card_container .card .card_img .icons a {
+    height: 3.5rem; 
+    line-height: 3.5rem; 
+    font-size: 1.4rem; 
+    background-color: #fb6f92;
+    color: #fff;
+    width: auto; 
+    flex-grow: 1; 
+}
+
+/* زر الإضافة للسلة يأخذ مساحة أكبر */
+.products .card_container .card .card_img .icons .card_btn {
+    border-left: 0.1rem solid #fff7;
+    border-right: 0.1rem solid #fff7;
+    flex-grow: 2; 
+}
+
+/* الأيقونات الأخرى تأخذ مساحة متساوية */
+.products .card_container .card .card_img .icons a:not(.card_btn) {
+    flex-grow: 1;
+}
+
+/* تغيير لون الأيقونات عند المرور */
+.products .card_container .card .card_img .icons a:hover {
+    background-color: #333;
+}
+
+/* محتوى الكارد (النصوص) */
+.products .card_container .card .content {
+    padding: 1rem; 
+    text-align: center;
+}
+
+.products .card_container .card .content h3 {
+    font-size: 1.8rem; /* تصغير العنوان */
+    color: #333;
+}
+
+/* السعر */
+.products .card_container .card .content .price {
+    font-size: 1.5rem; 
+    color: #fb6f92;
+    font-weight: bolder;
+    padding-top: 0.5rem;
+}
+
+/* السعر القديم */
+.products .card_container .card .content .price span {
+    font-size: 1.1rem; 
+    color: #999;
+    font-weight: lighter;
+    text-decoration: line-through; /* خط على السعر القديم */
+}
+/* نهاية بطاقات المنتجات*/
+/*ريسبونسف البطاقات*/
+@media (max-width: 992px) {
+    .products .card_container .card {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .products .card_container .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+/*ريسبونسف البطاقات*/
+
+/*  لما نضغط على وحدة من البطاقات*/
+
+/* Modal Background */
+.modal {
+    display: none; /* مخفي افتراضياً */
+    position: fixed; /* يثبت في مكانه عند التمرير */
+    z-index: 2000; /* فوق باقي العناصر */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* خلفية معتمة */
+    backdrop-filter: blur(5px); /* تأثير ضبابي للخلفية */
+    align-items: center; /* محاذاة رأسية */
+    justify-content: center; /* محاذاة أفقية */
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    position: relative;
+    padding: 2rem;
+    animation: fadeIn 0.4s ease; /* تأثير ظهور تدريجي */
+    direction: rtl; /* اتجاه النص عربي */
+}
+
+/* تأثير fade in */
+@keyframes fadeIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #333;
+}
+.close-btn:hover { color: #fb6f92; } /* لون عند المرور بالماوس */
+
+/* Modal Body Layout */
+.modal-body {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* السماح للعنصر بالانتقال لسطر جديد عند صغر الشاشة */
+    align-items: center;
+}
+
+/* صورة المودال */
+.modal-img { 
+    flex: 1; 
+    min-width: 250px; 
+    text-align: center; 
+}
+.modal-img img { 
+    width: 100%; 
+    border-radius: 10px; 
+}
+
+/* معلومات المودال */
+.modal-info { 
+    flex: 1.5; 
+    min-width: 250px; 
+}
+.modal-info h2 { 
+    font-size: 2rem; 
+    color: #333; 
+    margin-bottom: 1rem; 
+}
+
+/* نجوم التقييم */
+.stars { 
+    color: #ffb703; 
+    margin-bottom: 1rem; 
+    font-size: 1.2rem; 
+}
+.stars span { 
+    color: #777; 
+    font-size: 0.9rem; 
+    margin-right: 5px; 
+}
+
+/* وصف المنتج */
+.description { 
+    font-size: 1.1rem; 
+    color: #666; 
+    line-height: 1.6; 
+    margin-bottom: 1.5rem; 
+}
+
+/* سعر المنتج */
+.modal-price { 
+    font-size: 1.8rem; 
+    color: #fb6f92; 
+    font-weight: bold; 
+    margin-bottom: 1.5rem; 
+}
+
+/* زر الإضافة إلى السلة */
+.add-to-cart {
+    background-color: #fb6f92;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+.add-to-cart:hover { background-color: #333; }
+
+/*  رسيبونسف لما نضغط على البطاقة في الهواتف  */
+@media (max-width: 768px) {
+    .modal-body { 
+        flex-direction: column; /* ترتيب عمودي على الشاشات الصغيرة */
+        text-align: center; 
+    }
+}
+/*  نهاية لما نضغط على وحدة من البطاقات*/
+/* --القائمة يلي ف الجنب-- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* مخفية افتراضياً */
+    width: 300px;
+    height: 100%;
+    background-color: #fff1f8;
+    box-shadow: -3px 0 15px rgba(0,0,0,0.2);
+    border-left: 3px solid  #F72585;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    transition: right 0.4s ease; /* تأثير التحريك عند الفتح والإغلاق */
+    z-index: 1500;
+    direction: rtl; /* الكلام من اليمين لليسار */
+    text-align: right;
+}
+
+/* فتح الـ Sidebar عند التفعيل */
+#menu-toggle:checked ~ .sidebar {
+    right: 0;
+}
+
+/* زر × لإغلاق الـ Sidebar */
+.sidebar .close-btn {
+    font-size: 2.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: 1rem; /* على اليسار */
+    color: red;
+}
+
+/* اختفاء زر ☰ عند فتح الـ Sidebar */
+#menu-toggle:checked ~ .menu-icon {
+    display: none !important;
+}
+
+/* زر ☰ */
+.menu-icon {
+    font-size: 1.5rem;
+    padding-top: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2000;
+    color: #ff3366;
+}
+.menu-icon, .close-btn {
+    outline: none;
+}
+
+/* تنسيقات النص داخل Sidebar */
+.sidebar h2, .sidebar h3 {
+    color: #ff3366;
+}
+.sidebar p {
+    margin: 0.6rem 0;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
+}
+.sidebar p a {
+    color: #ff3366;
+}
+.sidebar p a:hover {
+    text-decoration: underline;
+}
+/*  نهاية القائمة يلي ف الحنب*/
+
+
+/* بداية  زر الملاحظات*/
+.feedback-button {
+    position: fixed;
+    left: 20px;
+    bottom: 40px;
+    background-color: #ff8fab;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+/* نافذة الملاحظات */
+.feedback-widget {
+    position: fixed;
+    left: 20px;
+    bottom: 110px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* إظهار النموذج عند تحديد checkbox */
+#feedback-toggle:checked ~ .feedback-widget {
+    display: flex;
+}
+
+/* الرأس */
+.feedback-header {
+    background-color: #ff8fab;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback-close {
+    cursor: pointer;
+}
+
+/* الجسم */
+.feedback-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-body textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.feedback-body button {
+    padding: 0.5rem;
+    background-color: #ff8fab;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback-body button:hover {
+    background-color: #fb6f92;
+}
+.feedback-button:hover {
+    transform: scale(1.2) rotate(-5deg);
+    box-shadow: 0 0.8rem 1.5rem rgba(0,0,0,0.3);
+}
+/* نهاية زر الملاحظات*/
+/*بداية اراء الزبائن*/
+.review {
+    padding: 3rem 2%;
+    background: #fff;
+    text-align: center;
+    
+}
+
+.review .heading {
+    font-family: 'Alexandria', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.slider-container {
+    max-width: 500px; /* حجم مصغر وراقي */
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* إخفاء الراديو */
+.slider-container input { display: none; }
+
+.cards-wrapper {
+    display: flex;
+    width: 600%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-card {
+   width: 16.666%;
+    padding: 2rem;
+    height: 250px;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    
+}
+
+.review-card .stars i {
+    color: #ffb703; /* ذهبي فخم */
+    font-size: 0.9rem;
+    margin: 0 2px;
+}
+
+.review-card p {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.user-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fb6f92;
+}
+
+.user-info h3 {
+    font-family: 'Alexandria', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.user-info span {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.8rem;
+    color: #fb6f92;
+}
+
+/* منطق التحريك (RTL الموجب) */
+#slide1:checked ~ .cards-wrapper { transform: translateX(0%); }
+#slide2:checked ~ .cards-wrapper { transform: translateX(16.666%); }
+#slide3:checked ~ .cards-wrapper { transform: translateX(33.332%); }
+#slide4:checked ~ .cards-wrapper { transform: translateX(49.998%); }
+#slide5:checked ~ .cards-wrapper { transform: translateX(66.664%); }
+#slide6:checked ~ .cards-wrapper { transform: translateX(83.330%); }
+
+/* تصميم أزرار التنقل */
+.manual-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+}
+
+.manual-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#slide1:checked ~ .manual-navigation label[for="slide1"],
+#slide2:checked ~ .manual-navigation label[for="slide2"],
+#slide3:checked ~ .manual-navigation label[for="slide3"] {
+    background: #fb6f92;
+    width: 25px;
+    border-radius: 5px;
+}
+/* نهاية اراء الزبائن*/
+/* ==================================== */
+/* 11. تذييل الصفحة (FOOTER) */
+/* ==================================== */
+
+.main-footer {
+    background-color: #ffe5ec; 
+    color: #0a0000; 
+    padding: 50px 0 20px; 
+    border-radius: 10px;
+    background-image: url(vovo.jpg); /* ممكن تحذفها لو ما فيها تأثير */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; 
+    text-align: right;
+    gap: 20px; 
+}
+
+.footer-column {
+    flex: 1 1 22%; 
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #F72585; 
+    border-bottom: 2px solid #dca3bd;
+    padding-bottom: 5px;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.footer-column p, .footer-column a {
+    color: #0b0101;
+    font-size: 20px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-column p {
+    text-align: right; 
+}
+
+.footer-column i {
+    margin-left: 10px;
+}
+
+.footer-column a:hover {
+    color: #F72585;
+    background-color: #ffe0f0; 
+    padding: 3px 6px; 
+    border-radius:10px;
+    box-shadow: 0 0 20px rgba(225, 120, 195, 0.2); 
+    transform: translateX(-3px); 
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: flex-end; 
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.social-icons a:hover {
+    color: #333;
+    background-color: #F72585;
+    border-color: #F72585;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 15px 20px 0;
+    border-top: 1px solid #555;
+    text-align: center;
+    font-size: 14px;
+    color: #070202;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-container {
+    margin-bottom: 15px;
+}
+
+.designer-text {
+    margin-top: 10px;
+    color: #2c0214; 
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/* ==================================== */
+/* تحسينات التجاوب (Responsiveness) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* تحويل الأعمدة لتصبح فوق بعضها */
+        text-align: center;    /* جعل النص في المنتصف للموبايل */
+        gap: 30px;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;       /* كل عمود يأخذ العرض كاملاً */
+        align-items: center;  /* محاذاة العناصر في المنتصف */
+    }
+
+    .footer-column h3 {
+        align-self: center;   /* محاذاة العناوين في المنتصف */
+        margin-bottom: 15px;
+    }
+
+    .footer-column p, .footer-column a {
+        text-align: center;   /* محاذاة الفقرات والروابط في المنتصف */
+    }
+
+    .footer-column ul {
+        align-items: center;  /* محاذاة القوائم في المنتصف */
+    }
+
+    .social-icons {
+        justify-content: center; /* محاذاة أيقونات التواصل في المنتصف */
+    }
+
+    .footer-column i {
+        margin-left: 0;
+        margin-right: 5px; /* تعديل مسافة الأيقونة عند التوسط */
+    }
+
+    .footer-column a:hover {
+        transform: translateY(-3px); /* تغيير اتجاه الحركة للأعلى بدلاً من اليمين */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-footer {
+        padding: 30px 0 15px; /* تقليل الهوامش في الشاشات الصغيرة جداً */
+    }
+    
+    .footer-column h3 {
+        font-size: 20px; /* تصغير حجم العنوان قليلاً */
+    }
+}

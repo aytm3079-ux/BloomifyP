@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOOMIFY متجر</title>
+  <link rel="icon" type="image/png" href="image/icon.jpg">
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;800&family=Tajawal:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* جعل التمرير سلساً عند الضغط على الروابط */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <!--شريط الاعلانات-->
+  <div class="announcement-bar">
+    <p>ملاحظة.. هل تحتاج توصيل سريع؟ تسوق <a href="#">المتاح قريباً</a> </p>
+  </div>
+<!--شريط الاعلانات-->
+<!--بداية الهيدر-->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="image/logo.png" alt="logo" width="150px">
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#contact">تواصل معنا</a></li>
+          <li><a href="#foo">اتصل بنا</a></li>
+          <li><a href="#reviews">التقييمات</a></li>
+          <li><a href="#products-section">المنتجات</a></li>
+          <li><a href="#about-section">من نحن</a></li>
+          <li><a href="#">الرئيسية</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-icons">
+        <div class="cart-icon">
+          <span class="cart-count">3</span>
+          <i class="icon-cart">🛒</i>
+        </div>
+        <div class="search-icon"><i class="icon-search">🔍</i></div>
+        <a href="#" class="fas fa-heart" title="المفضلة" style="color: #F72585;"></a>
+      </div>
+    </div>
+  </header>
+  <!-- نهاية الهيدر-->
+<!-- بداية الطبقة لزجاجية-->
+  <section class="hero-section">
+    <div class="glass-container">
+      <div class="hero-content">
+           <h1>Bloomfy.. نعتني بكل تفاصيل شعورك.</h1>
+            <p>  لأن اللحظات السعيدة لا تكتمل بقطعة واحدة، جمعنا لك في Bloomfy سحر الورد، ولذة الكيك، وبهجة البالونات، لتصنع ذكرى لا تُنسى. نختار لك أجود التنسيقات وننسقها بكل حب،
+               لتصل هديتك 
+              إلى القلب قبل اليد.</p>
+        <a href="#products-section" class="shop-btn">تسوق الآن</a>
+      </div>
+      <div class="hero-image">
+        <img src="image/do.png" alt="">
+      </div>
+    </div>
+  </section>
+  <!-- نهاية الطبقة الزجاجية-->
+<!-- قسم من نحن-->
+  <section class="about" id="about-section">
+    <h1 class="heading"><span>من </span>نحن</h1>
+    <div class="row">
+      <div class="video_container">
+        <video src="video/video_2025-12-08_10-37-55.mp4" loop autoplay muted></video>
+        <h3>اختيارك الأول</h3>
+      </div>
+      <div class="content">
+        <h3>لماذا اخترتنا؟</h3>
+        <p>
+         نحن من أفضل بائعي الورد لأن شغفنا بالجمال يبدأ من أول زهرة نختاروها.
+نؤمن أن الورد مش مجرد هدية، بل رسالة حب وفرح واهتمام.
+لذلك نختار أجود الأنواع من الموردين الموثوقين، ونعتنوا بكل باقة كأنها قطعة فن.</p>
+        <p>خبرتنا الطويلة في تنسيق الورود وتجهيز الطلبات لكل المناسبات – من أعياد الميلاد للخطوبة والنجاحات – خلتنا نكون خيار الناس اللي يحبوا الجودة والدقة والجمال في كل تفصيلة.
+نوصّل بسرعة، نهتم بالتغليف، ونضمن أن الورد يوصل بنفس الجمال اللي طلع من محلّنا
+        </p>
+        <a href="#" class="btn">للمزيد</a>
+      </div>
+    </div>
+  </section>
+<!--الزر العائم-->
+  <label for="feedback-toggle" class="feedback-button">
+    <i class="fas fa-comment-alt"></i>
+  </label>
+  <input type="checkbox" id="feedback-toggle" style="display:none;">
+  <div class="feedback-widget">
+    <div class="feedback-header">
+      <h3><i class="fas fa-pen"></i> ملاحظاتك</h3>
+      <label for="feedback-toggle" class="feedback-close"><i class="fas fa-times"></i></label>
+    </div>
+    <div class="feedback-body">
+      <form action="#" method="post">
+        <textarea name="feedback" placeholder="اكتب ملاحظتك هنا..."></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </div>
+<!-- ايقونات التوصيل-->
+  <section class="icons_container">
+    <div class="icons">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <div class="info">
+        <h3>free delivery</h3>
+        <span>on all orders</span>
+      </div>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-money-check-dollar"></i>
+      <div class="info">
+        <h3>secure payment</h3>
+        <span>protected by paypal</span>
+      </div>
+    </div>
+  </section>
+<!--شريط الاعلانات-->
+  <div class="pink-promo-banner">
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <div class="ticker-item">🌸 اكتشفوا تشكيلة الربيع الجديدة</div>
+        <div class="ticker-item">✨ خصم 15% على أول طلب هدايا</div>
+        <div class="ticker-item">🍰 حلوياتنا تُصنع طازجة يومياً</div>
+        <div class="ticker-item">💖 بوابتكم لعالم من الأناقة</div>
+      </div>
+    </div>
+    <div class="banner-inner">
+      <h2>وجهتكم الأولى لـ <span>أرقى المتاجر</span></h2>
+      <p>تصفحوا مجموعتنا المختارة من الورود، الحلويات، والهدايا الفاخرة</p>
+    </div>
+  </div>
+<!-- بداية المتاجر-->
+  <section class="luxury-gallery" id="products-section">
+    <div class="store-gateway flowers">
+      <div class="gateway-content">
+        <span>01</span>
+        <h2>عالم الورود الطبيعية والزهور النادرة</h2>
+            <p>نحن لا نبيع مجرد أزهار، بل نصمم مشاعر تدوم طويلاً. اكتشف تشكيلتنا الموسمية الفريدة التي تم انتقاؤها بعناية فائقة من أجود المزارع العالمية لتناسب أرقى مناسباتكم الهامة، من حفلات الزفاف الفاخرة إلى الهدايا الخاصة التي تعبر عن الحب والتقدير بأجمل الألوان الطبيعية والعطور الفواحة التي تملأ المكان بهجة ورقياً.</p>
+        <a href="index2.html" class="explore-btn">دخول المتجر</a>
+      </div>
+      <div class="gateway-image">
+        <img src="image/photo_2025-12-23_08-21-38.jpg" alt="Flowers Store">
+      </div>
+    </div>
+    <div class="store-gateway gifts">
+      <div class="gateway-content">
+        <span>03</span>
+        <h2>ركن الهدايا والبوكسات الملكية</h2>
+       <p>الهدايا هي لغة القلوب التي تعبر عما يعجز عنه الكلام. اخترنا لكم مجموعة فريدة من الهدايا التي تناسب جميع الأذواق والمناسبات السعيدة. نوفر لكم خدمة تغليف احترافية وبوكسات متكاملة تجمع بين الأناقة والفخامة، لتكون هديتكم ذكرى خالدة لا تُنسى في قلوب من تحبون. اجعل من عطائك تجربة استثنائية تليق بمقام أحبائك مع لمساتنا الخاصة.</p>
+            <a href="index4.html" class="explore-btn">دخول المتجر</a>
+      </div>
+      <div class="gateway-image">
+        <img src="image/photo_2025-12-23_08-21-38.jpg" alt="Gifts Store">
+      </div>
+    </div>
+
+    <div class="store-gateway sweets invert">
+      <div class="gateway-content">
+        <span>02</span>
+        <h2>ركن الحلويات الفاخرة والكيك المخصص</h2>
+    <p>استمتع برحلة من المذاق الفريد مع تشكيلة الحلويات الفاخرة لدينا. نجمع بين المكونات الأصلية واللمسات الفنية المبدعة لنقدم لكم قطعاً فنية تذوب في الفم وترضي حواسك. سواء كنت تبحث عن كعك المناسبات المخصص بتصاميم عصرية أو صناديق الشوكولاتة البلجيكية الفاخرة، فإننا نضمن لك تجربة استثنائية تجمل مائدتك وتفرح ضيوفك بكل حب.</p>
+            <a href="index3.html" class="explore-btn">دخول المتجر</a>
+      </div>
+      <div class="gateway-image">
+        <img src="image/photo_1_2025-12-23_08-32-34.jpg" alt="Sweets Store">
+      </div>
+    </div>
+
+    
+  </section>
+    <!-- قسم التقييمات الرئيسي -->
+    <!-- ========================================== -->
+
+  <section class="review-carousel-section" id="reviews">
+    <!-- عنوان القسم -->
+    <h2 class="carousel-section-title" style="font-size: xx-larger;">
+      BLOOMIFY أصدقاء
+    </h2>
+     <!-- نص توضيحي تحت العنوان -->
+
+    <p class="carousel-section-subtitle" style="font-size: x-large;">
+      لأن الهدية هي لغة الشعور، إليك تقييمات من شاركناهم لحظاتهم الجميلة من خلال زهورنا ولمساتنا الخاصة
+    </p>
+
+    <div class="review-carousel-wrapper">
+<!-- حاوية البطاقات -->
+      <div class="review-cards-container">
+  <!-- بطاقة تقييم -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <i class="fas fa-quote-right quote-mark"></i>
+          </div>
+          <p class="review-text" style="font-size: large;">
+            جربة استثنائية! طلبت باقة ورد لعيد ميلاد صديقتي، وبصراحة التنسيق كان أجمل مما توقعت بكتير. الورد نضر وريحته تعبي المكان، واللمسات الفنية في التغليف خلت الهدية شكلها جداً فخم. شكراً لكم
+          </p>
+          <div class="client-bio">
+            <img src="image/توب 1.jpg" alt="فهد السعودي" class="client-avatar">
+            <div class="client-details">
+              <span class="client-name">فهد السعودي</span>
+              <span class="client-title">عميل مناسبات خاصة</span>
+            </div>
+          </div>
+        </div>
+
+                <!-- بطاقة تقييم ثانية -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <i class="fas fa-quote-right quote-mark"></i>
+          </div>
+          <p class="review-text" style="font-size: large;">
+            أفضل متجر هدايا تعاملت معه، الالتزام بالوقت كان دقيق جداً وهذا أهم شيء عندي. الباقة وصلت في قمة الأناقة والبطاقة كانت مكتوبة بخط جميل ومرتب. اعتمدتكم لكل مناسباتي القادمة بالتأكيد!
+          </p>
+          <div class="client-bio">
+            <img src="image/توب 4.webp" alt="ليبيا العجيلي" class="client-avatar">
+            <div class="client-details">
+              <span class="client-name">ليبيا العجيلي</span>
+              <span class="client-title">متابعة جديدة</span>
+            </div>
+          </div>
+        </div>
+<!-- بطاقة تقييم ثالثة -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <i class="fas fa-quote-right quote-mark"></i>
+          </div>
+          <p class="review-text" style="font-size: large;">
+            ما شاء الله، ذوق رفيييع وتفاصيل مذهلة. طلبت تنسيق هدية مع ورد، وكان اختيارهم للألوان متناسق جداً ويواجه. تعامل الموظفين كان راقي جداً وساعدوني أختار الأنسب لميزانيتي. الله يبارك لكم.
+          </p>
+          <div class="client-bio">
+            <img src="image/توب 3.webp" alt="محمد الليبي" class="client-avatar">
+            <div class="client-details">
+              <span class="client-name">محمد الليبي</span>
+              <span class="client-title">أب لعائلة كبيرة</span>
+            </div>
+          </div>
+        </div>
+<!-- بطاقة تقييم رابعة -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <i class="fas fa-quote-right quote-mark"></i>
+          </div>
+          <p class="review-text" style="font-size: large;">
+            "تشيز كيك التوت الأزرق هو الأفضل! القوام كريمي ونكهة التوت المنعشة خفيفة. وصلتني باردة تماماً بفضل التوصيل المتقن."
+          </p>
+          <div class="client-bio">
+            <img src="image/توب 6.jpg" alt="اية محمد" class="client-avatar">
+            <div class="client-details">
+              <span class="client-name">أية محمد</span>
+              <span class="client-title">مُحبة الحلويات الباردة</span>
+            </div>
+          </div>
+        </div>
+  <!-- بطاقة تقييم خامسة -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <i class="fas fa-quote-right quote-mark"></i>
+          </div>
+          <p class="review-text" style="font-size: large;">
+            "الشوكولاتة البلجيكية لديكم شيء خيالي! الذوبان مثالي والنكهة غنية جداً، وصلت باردة وبتغليف احترافي. أنصح بها كل عاشق للكاكاو الأصيل."
+          </p>
+          <div class="client-bio">
+            <img src="image/pe1.jpg" alt="جاسم" class="client-avatar">
+            <div class="client-details">
+              <span class="client-name">جاسم القطري</span>
+              <span class="client-title">محب الشوكولاتة الكلاسيكية</span>
+            </div>
+          </div>
+        </div>
+<!-- بطاقة تقييم سادسة -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <i class="fas fa-quote-right quote-mark"></i>
+          </div>
+          <p class="review-text" style="font-size: large;">
+            "أفضل كيكة فانيلا جربتها! الطعم خفيف وسكرها موزون بشكل احترافي، والأهم أنها تصل في الوقت المحدد تماماً لضمان الطزاجة."
+          </p>
+          <div class="client-bio">
+            <img src="image/pe3.jpg" alt="اميمة اللافي" class="client-avatar">
+            <div class="client-details">
+              <span class="client-name">اميمة اللافي</span>
+              <span class="client-title">عميلة دائمة</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+<!-- نهاية حاوية البطاقات -->
+      <!-- أزرار التنقل -->
+            <button class="nav-button prev-btn" aria-label="التقييم السابق">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="nav-button next-btn" aria-label="التقييم التالي">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+        </div> <!-- نهاية الكاروسيل -->
+
+    </section> <!-- نهاية قسم التقييمات -->
+    <!-- تواصل معنا start -->
+  <section class="contact" id="contact">
+
+    <h1 class="heading"><span> تواصل</span> معنا</h1>
+
+    <div class="row">
+
+      <form action="">
+        <input type="text" placeholder="الاسم..." class="card">
+        <input type="email" placeholder="الايميل..." class="card">
+        <input type="number" placeholder="الرقم..." class="card">
+        <textarea name="" class="card" placeholder="الرسالة..." id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="ارسال الرسالة" class="btn">
+      </form>
+      <div class="image">
+        <img src="image/cow.png">
+      </div>
+    </div>
+  </section>
+  <!-- contact section end -->
+
+  <footer class="main-footer">
+
+    <!-- ===================== محتوى الفوتر: جميع الأعمدة ===================== -->
+    <div class="footer-content" id="foo">
+
+        <!-- ===== عمود التواصل معنا ===== -->
+        <!-- هنا نضع معلومات الاتصال مثل الهاتف، البريد، العنوان وأيقونات التواصل الاجتماعي -->
+        <div class="footer-column">
+            <h3>تواصل معنا</h3>
+            <p><i class="fas fa-phone"></i> +218 9x xxx xx x0</p>
+            <p><i class="fas fa-envelope"></i> info@yourstore.ly</p>
+            <p><i class="fas fa-map-marker-alt"></i> طرابلس ليبيا 1 2 3 4 5</p>
+            
+            <div class="social-icons">
+                <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- ===== عمود مواقعنا ===== -->
+        <!-- هنا نضع قائمة بالدول أو المواقع التي يتواجد فيها المتجر -->
+        <div class="footer-column">
+            <h3>مواقعنا</h3>
+            <ul>
+                <li><a href="#">ليبيا</a></li>
+                <li><a href="#">تونس</a></li>
+                <li><a href="#">قطر</a></li>
+                <li><a href="#">السعودية</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== عمود الروابط السريعة ===== -->
+        <!-- هنا نضع روابط الصفحات المهمة للمتجر مثل الرئيسية، من نحن، المنتجات، التقييمات، تواصل معنا -->
+       <div class="footer-column">
+        <h3>روابط سريعة</h3>
+        <ul>
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#about-section">من نحن</a></li>
+          <li><a href="#products-section">المنتجات</a></li>
+          <li><a href="#reviews">التقييمات</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>    
+
+        <!-- ===== عمود الروابط الإضافية ===== -->
+        <!-- هنا نضع روابط الحساب الشخصي مثل حسابي، طلباتي، المفضلة، الدفع والشحن -->
+        <div class="footer-column">
+            <h3>روابط إضافية</h3>
+            <ul>
+                <li><a href="#">حسابي</a></li>
+                <li><a href="#">طلباتي</a></li>
+                <li><a href="#">المفضلة</a></li>
+                <li><a href="#">الدفع والشحن</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    
+    <!-- ===================== أسفل الفوتر ===================== -->
+    <!-- يحتوي على شعار المتجر وحقوق الطبع واسم المصممين -->
+    <div class="footer-bottom">
+        <div class="footer-logo-container">
+            <div class="logo">
+        <img src="image/logo.png" alt="logo" width="150px">
+      </div>
+        </div>
+        <p class="copyright-text">
+            &copy; 2025 جميع الحقوق محفوظة.
+        </p>
+        <p class="designer-text">
+             Omaima & Libya & Aya  تم التصميم بواسطة:
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>
